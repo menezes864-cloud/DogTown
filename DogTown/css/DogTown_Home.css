@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*MENU----------------------------------------------------------------*/
+
+body{
+    font-family: "Edu VIC WA NT Hand", cursive;
+    background-color: rgb(229, 229, 233);
+    color: #4daa8e;
+    box-sizing: 12px; 
+    padding: 20px;
+
+}
+
+.portal-header{
+    grid-area: header;
+    background: #320ea5;
+    color: #ffffff;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.logo{
+    font-size: 2.0rem;
+    font-weight: bold;
+}
+
+.nav-menu a{
+    color: #f3f6f7;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-menu a:hover{
+    color: #ffffff;
+    /*movimentação dos botões*/
+    transform: translateY(-5px) translateX(5px) rotate(10deg);
+
+}
+
+
+/*FOOTER-------------------------------------------------------------*/
+
+:root{
+    --cor-fundo: #efa000;
+    --cor-card: #ffffff;
+    --cor-principal: #e91f62;
+    --cor-principal-hover: #11b234;
+    --cor-texto: #333333;
+    --espacamento: 20px;
+    --borda: 12px;
+
+    /*Tempo de animação*/
+
+    --tempo: 0.4s;
+    /*Distância utilizada no transform*/
+    --deslocamento: -10px;
+    /*Intensidade da sombra*/
+    --sombra: 0px 8px 20px rgba(0,0,0,.15);
+}
+
+
+body{
+    font-family: "Edu VIC WA NT Hand", cursive;
+    background-color: var(--cor-fundo);
+    color: #4daa8e;
+    box-sizing: 12px; 
+    padding: 20px;
+
+}
+
+.portal-footer {
+    grid-area: footer;
+    background: #320ea5;
+    color: white;
+    text-align: left;
+    padding: 20px 24px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+.logo-footer{
+    font-size: 2.0rem;
+    font-weight: bold;
+}
+
+.footer-direitos{
+    text-align: center;
+}
