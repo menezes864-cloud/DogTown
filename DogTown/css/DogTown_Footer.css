@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Fugaz+One&family=Geologica:wght,CRSV@100..900,0&family=Indie+Flower&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 
 :root{
     --cor-fundo: #efa000;
@@ -24,7 +27,7 @@
 
 
 body{
-    font-family: "Edu VIC WA NT Hand", cursive;
+   
     background-color: var(--cor-fundo);
     color: #4daa8e;
     box-sizing: 12px; 
@@ -33,10 +36,11 @@ body{
 }
 
 .portal-footer {
+    font-family: "Geologica", sans-serif;
     grid-area: footer;
     background: #320ea5;
     color: white;
-    text-align: left;
+    text-align: center;
     padding: 20px 24px;
     border-radius: 8px;
     font-size: 1.2rem;
