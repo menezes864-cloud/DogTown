@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+    margin: 2px;
+    padding: 4px;
+}
+
+:root{
+    --cor-fundo: #f4f4f4;
+    --cor-card: #ffffff;
+    --cor-principal: #efa000;
+    --cor-principal-hover: #11b234;
+    --cor-texto: #ffffff;
+    --espacamento: 20px;
+    --borda: 12px;
+
+    /*Tempo de animação*/
+
+    --tempo: 0.4s;
+    /*Distância utilizada no transform*/
+    --deslocamento: -10px;
+    /*Intensidade da sombra*/
+    --sombra: 0px 8px 20px rgba(0,0,0,.15);
+}
+
+
+
+body{
+    font-family: "Edu VIC WA NT Hand", cursive;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto);
+    padding: 20px;
+
+
+}
+
+/*========================
+BANNER
+++++++++++++++++++++++++++*/
+
+.banner{
+    text-align: center;
+    padding: 35px;
+    border-radius: 15px;
+    width: 100%;
+    margin-top: 35px;
+
+}
+
+.banner img{
+    width: 80%;
+    height: 500px;
+    border-radius: 15px;
+    margin-top: 20px;
+
+}
+.banner h2{
+    color: white;
+    font-size: 34px;
+}
+
+
+/*==============
+
+nosso seevicos
+====================*/
+
+.nossos-servicos{
+    display: grid;
+    grid-template-columns: 10fr;
+    grid-template-rows:  10fr 10fr 10fr 10fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+
+    grid-template-areas: ;
+}
+
+
+/*=======
+
+CARDS
+
+=========*/
+.card{
+    display: inline;
+    background: #6441d9e4;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 15px;
+    border-left: 8px solid #c0b4ec;
+    transition: var(--tempo) ease,
+    var(--deslocamento) ease,
+    var(--sombra);
+    
+}
+.card:hover{
+     transform: translateY(var(--deslocamento)) scale(1.05);
+    box-shadow: var(--sombra);
+}
+.card h1{
+    font-size: 40px;
+
+}
+
+.card h2{
+    font-size: 20px;
+}
+
+
+.card-lista{
+     display: flex;
+}
+
+
+
+
+________________________________________________
+
+
+/* Configuração básica para garantir que a página ocupe a tela toda */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cria uma camada de fundo atrás de todo o conteúdo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Garante que a imagem fique atrás do texto */
+    
+    /* Configurações da imagem */
+    background-image: url('/do');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Controle da opacidade (0.0 a 1.0) */
+    opacity: 0.3; 
+}
