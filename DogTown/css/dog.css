@@ -3,9 +3,9 @@
    ========================================================================== */
 :root {
   --primary-color: #ff6b35;       /* Laranja vibrante e acolhedor */
-  --primary-hover: #e05320;       /* Tom de hover para o botão principal */
-  --secondary-color: #2a9d8f;     /* Verde azulado para destaques e ícones */
-  --dark-color: #2b2d42;          /* Texto e fundos escuros */
+  --primary-hover: #201d1c;       /* Tom de hover para o botão principal */
+  --secondary-color: #11100bfd;     /* Verde azulado para destaques e ícones */
+  --dark-color: hsl(0, 0%, 4%);          /* Texto e fundos escuros */
   --light-bg: #Efa000;            /* Fundo suave num tom creme/quente */
   --white: #ffffff;
   --gray-light: #f1f3f5;
@@ -75,7 +75,7 @@ a {
 .btn-primary:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 6px 20px hsla(180, 92%, 49%, 0.952);
 }
 
 /* ==========================================================================
