@@ -41,6 +41,7 @@ body{
     background: #320ea5;
     color: white;
     text-align: center;
+    display: flex;
     padding: 20px 24px;
     border-radius: 8px;
     font-size: 1.2rem;
@@ -51,6 +52,11 @@ body{
     font-weight: bold;
 }
 
+.porta-footer p{
+    
+    font-size: 1px;
+    text-align: left;
+}
 .footer-direitos{
     text-align: center;
 }
