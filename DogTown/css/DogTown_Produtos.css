@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    --cor-fundo: #f4f4f4;
+    --cor-card: #ffffff;
+    --cor-principal: #efa000;
+    --cor-principal-hover: #11b234;
+    --cor-texto: #ffffff;
+    --espacamento: 20px;
+    --borda: 12px;
+
+    /*Tempo de animação*/
+
+    --tempo: 0.4s;
+    /*Distância utilizada no transform*/
+    --deslocamento: -10px;
+    /*Intensidade da sombra*/
+    --sombra: 0px 8px 20px rgba(0,0,0,.15);
+}
+
+body{
+    font-family: "Edu VIC WA NT Hand", cursive;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto);
+     max-width: 70%;
+     margin: auto;
+
+
+}
+.banner{
+    text-align: center;
+    padding: 35px;
+    border-radius: 15px;
+    width: 100%;
+    margin-top: 35px;
+}
+
+.banner h2{
+    color: white;
+    font-size: 34px;
+}
+
+.banner img{
+    width: 80%;
+    height: 500px;
+    border-radius: 15px;
+    margin-top: 20px;
+
+}
+
+.categoria{
+    text-align: left;
+    font-size: 24px;
+    margin-left: 3%;
+    margin-bottom: 10px;
+}
+
+
+.categoria h2{
+
+}
