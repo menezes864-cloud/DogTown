@@ -19,15 +19,24 @@ body{
     grid-area: header;
     background: #320ea5;
     color: #ffffff;
-    padding: 20px 24px;
+    padding: 10px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 8px;
+    max-width: 70%;
+    margin: auto;
 }
 
+.portal-header h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: left;
+}
+
+
 .logo{
-    font-size: 2.0rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
