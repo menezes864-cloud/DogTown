@@ -2,16 +2,16 @@
    1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
    ========================================================================== */
 :root {
-  --primary-color: #ff6b35;       /* Laranja vibrante e acolhedor */
-  --primary-hover: #201d1c;       /* Tom de hover para o botão principal */
-  --secondary-color: #11100bfd;     /* Verde azulado para destaques e ícones */
-  --dark-color: hsl(0, 0%, 4%);          /* Texto e fundos escuros */
-  --light-bg: #Efa000;            /* Fundo suave num tom creme/quente */
-  --white: #ffffff;
-  --gray-light: #f1f3f5;
-  --gray-text: #6c757d;
+  --primary-color: hsl(0, 100%, 100%);       
+  --primary-hover: #201d1c;       
+  --secondary-color: #11100bfd;    
+  --dark-color: hsl(0, 0%, 4%);          
+  --light-bg: #Efa000;           
+  --white: lab(57.05% 19.46 -41.28);
+  --gray-light: hsl(0, 0%, 100%);
+  --gray-text: lab(100% 0.01 -0.01);
   --border-radius: 12px;
-  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --box-shadow: 0 8px 24px rgba(248, 236, 236, 0.08);
   --transition: all 0.3s ease;
   --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
@@ -52,7 +52,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: lavender;
   transition: var(--transition);
 }
 
@@ -75,7 +75,7 @@ a {
 .btn-primary:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px hsla(180, 92%, 49%, 0.952);
+  box-shadow: 0 6px 20px lch(89.14% 112.4 131.13 / 0.952);
 }
 
 /* ==========================================================================
@@ -100,7 +100,7 @@ a {
 }
 
 .logo-container img {
-  height: 50px;
+  height: 80px;
   width: auto;
   object-fit: contain;
 }
@@ -326,7 +326,7 @@ a {
    6. CTA (CALL TO ACTION) BANNER
    ========================================================================== */
 .cta-banner {
-  background: linear-gradient(135deg, var(--primary-color), #ff8c42);
+  background: linear-gradient(135deg, var(--primary-color), lab(19.81% 6.43 13.8));
   color: var(--white);
   padding: 60px 20px;
   border-radius: var(--border-radius);
@@ -380,7 +380,7 @@ a {
 }
 
 .footer ul a {
-  color: #cbd5e1;
+  color: hsl(210, 100%, 100%);
   font-size: 0.95rem;
 }
 
@@ -390,7 +390,7 @@ a {
 }
 
 .footer p {
-  color: #cbd5e1;
+  color: #f5f8fd;
   font-size: 0.95rem;
   margin-bottom: 8px;
 }
@@ -399,7 +399,7 @@ a {
   text-align: center;
   padding-top: 25px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #94a3b8;
+  color: #f7f9fc;
   font-size: 0.85rem;
 }
 
