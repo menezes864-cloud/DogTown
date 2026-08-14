@@ -43,8 +43,7 @@ body{
     text-align: center;
     display: flex;
     padding: 20px 24px;
-    border-radius: 8px;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .logo-footer{
@@ -52,12 +51,26 @@ body{
     font-weight: bold;
 }
 
-.porta-footer p{
-    
-    font-size: 1px;
+.footer-texto {
+    padding: 10px 10px;
+    font-size: 20px;
     text-align: left;
+    align-items: center;
+    gap: 10px;
 }
 .footer-direitos{
+    background: #320ea5;
     text-align: center;
 }
 
+
+@media (max-width: 768px) {
+    .portal-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-texto {
+        text-align: center;
+    }
+}
