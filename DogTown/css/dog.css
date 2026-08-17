@@ -3,11 +3,11 @@
    ========================================================================== */
 :root {
   --primary-color: hsl(0, 100%, 100%);       
-  --primary-hover: #201d1c;       
+  --primary-hover: hwb(0 3% 97%);       
   --secondary-color: #11100bfd;    
   --dark-color: hsl(0, 0%, 4%);          
   --light-bg: #Efa000;           
-  --white: lab(57.05% 19.46 -41.28);
+  --white: lch(41.38% 85.54 300.8);
   --gray-light: hsl(0, 0%, 100%);
   --gray-text: lab(100% 0.01 -0.01);
   --border-radius: 12px;
@@ -75,7 +75,7 @@ a {
 .btn-primary:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px lch(89.14% 112.4 131.13 / 0.952);
+  box-shadow: 0 6px 20px oklab(84.983% 0.01059 0.17312 / 0.952);
 }
 
 /* ==========================================================================
@@ -148,7 +148,7 @@ a {
 
 .hero-section h1 {
   font-size: 2.4rem;
-  color: var(--dark-color);
+  
   margin-bottom: 25px;
   font-weight: 700;
 }
@@ -179,14 +179,14 @@ a {
 }
 
 .about-text h2 {
-  color: var(--primary-color);
+  color: white;
   font-size: 1.8rem;
   margin-bottom: 15px;
 }
 
 .about-text p {
   font-size: 1.05rem;
-  color: #4a5568;
+  color: white;
   margin-bottom: 15px;
 }
 
@@ -214,8 +214,8 @@ a {
 
 .mv-card h3 {
   font-size: 1.3rem;
-  margin-bottom: 15px;
-  color: var(--dark-color);
+  margin-bottom: 20px;
+  color: white;
 }
 
 .mv-card ul {
@@ -240,7 +240,7 @@ a {
 .highlights-section h2 {
   font-size: 2.2rem;
   margin-bottom: 40px;
-  color: var(--dark-color);
+  color: white;
   position: relative;
   display: inline-block;
 }
