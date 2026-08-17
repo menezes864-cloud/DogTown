@@ -12,7 +12,7 @@
   --gray-text: lab(100% 0.01 -0.01);
   --border-radius: 12px;
   --box-shadow: 0 8px 24px rgba(248, 236, 236, 0.08);
-  --transition: all 0.3s ease;
+  --transition: all 1.3s ease;
   --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
@@ -238,7 +238,7 @@ a {
 }
 
 .highlights-section h2 {
-  font-size: 2.2rem;
+  font-size: 6.2rem;
   margin-bottom: 40px;
   color: white;
   position: relative;
@@ -307,18 +307,18 @@ a {
 .card-content {
   padding: 25px;
   text-align: left;
-  flex-grow: 1;
+  flex-grow: 4;
 }
 
 .card-content h3 {
-  font-size: 1.25rem;
+  font-size: 2.25rem;
   color: var(--dark-color);
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 
 .card-content p {
   color: var(--gray-text);
-  font-size: 0.95rem;
+  font-size: 1.55rem;
   line-height: 1.5;
 }
 
