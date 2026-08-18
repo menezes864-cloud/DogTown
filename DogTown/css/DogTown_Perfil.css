@@ -22,15 +22,11 @@
 html{scroll-behavior:smooth}
 
 body{
-    min-height:100vh;
-    font-family:Arial,Helvetica,sans-serif;
-    color:var(--texto);
-    background:
-        radial-gradient(circle at 20px 20px,rgba(50,14,165,.55) 0 8px,transparent 9px),
-        radial-gradient(circle at 40px 12px,rgba(50,14,165,.55) 0 6px,transparent 7px),
-        radial-gradient(circle at 30px 40px,rgba(50,14,165,.55) 0 10px,transparent 11px),
-        var(--fundo);
-    background-size:130px 130px;
+   
+    margin: 0;
+    height: 100vh;
+    background: url('Patinhas.avif') center/COVER repeat;
+    
 }
 
 button,input,select,textarea{font:inherit}
