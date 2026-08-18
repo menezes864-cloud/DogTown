@@ -1,101 +1,244 @@
-*{
+/* CONFIGURAÇÕES GERAIS E RESET escolar */
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/*MENU----------------------------------------------------------------*/
-
-body{
-    font-family: "Edu VIC WA NT Hand", cursive;
-    background-color: rgb(229, 229, 233);
-    color: #4daa8e;
-    box-sizing: 12px; 
-    padding: 20px;
-
+:root {
+    --cor-fundo: #efa000;          /* Amarelo DogTown */
+    --cor-principal: #320ea5;      /* Roxo DogTown */
+    --cor-texto-escura: #333333;
+    --cor-card-fundo: #ffffff;
+    --borda-raio: 12px;
+    --tempo-animacao: 0.3s;
 }
 
-.portal-header{
-    grid-area: header;
-    background: #320ea5;
+body {
+    font-family: "Geologica", sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-escura);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* MARCA D'ÁGUA DE PATINHAS NO FUNDO */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('img/pet_patinhas.jpg'); /* ajuste o caminho se necessário */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08; /* Bem suave para não atrapalhar a leitura */
+}
+
+/* CABEÇALHO / HEADER */
+.portal-header {
+    background: var(--cor-principal);
     color: #ffffff;
-    padding: 20px 24px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.logo{
-    font-size: 2.0rem;
+.logo {
+    font-size: 2rem;
     font-weight: bold;
 }
 
-.nav-menu a{
+.nav-menu a {
     color: #f3f6f7;
     text-decoration: none;
     margin-left: 20px;
     font-weight: 500;
-    font-size: 1.5rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: color 0.25s ease, transform 0.25s ease;
-}
-
-.nav-menu a:hover{
-    color: #ffffff;
-    /*movimentação dos botões*/
-    transform: translateY(-5px) translateX(5px) rotate(10deg);
-
-}
-
-
-/*FOOTER-------------------------------------------------------------*/
-
-:root{
-    --cor-fundo: #efa000;
-    --cor-card: #ffffff;
-    --cor-principal: #e91f62;
-    --cor-principal-hover: #11b234;
-    --cor-texto: #333333;
-    --espacamento: 20px;
-    --borda: 12px;
-
-    /*Tempo de animação*/
-
-    --tempo: 0.4s;
-    /*Distância utilizada no transform*/
-    --deslocamento: -10px;
-    /*Intensidade da sombra*/
-    --sombra: 0px 8px 20px rgba(0,0,0,.15);
-}
-
-
-body{
-    font-family: "Edu VIC WA NT Hand", cursive;
-    background-color: var(--cor-fundo);
-    color: #4daa8e;
-    box-sizing: 12px; 
-    padding: 20px;
-
-}
-
-.portal-footer {
-    grid-area: footer;
-    background: #320ea5;
-    color: white;
-    text-align: left;
-    padding: 20px 24px;
-    border-radius: 8px;
     font-size: 1.2rem;
+    display: inline-block;
+    transition: transform var(--tempo-animacao) ease, color var(--tempo-animacao) ease;
 }
 
-.logo-footer{
-    font-size: 2.0rem;
-    font-weight: bold;
+.nav-menu a:hover {
+    color: #ffffff;
+    transform: translateY(-3px); /* Efeito clássico de subir o botão */
 }
 
-.footer-direitos{
+/* CONTEÚDO PRINCIPAL */
+.principal {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
     text-align: center;
 }
+
+.boas-vindas h1 {
+    color: var(--cor-principal);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.boas-vindas p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.titulo-secao {
+    color: var(--cor-principal);
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+/* SEÇÃO DE CARDS DOS SERVIÇOS */
+.conteudo-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* CARD INDIVIDUAL */
+.card {
+    background: var(--cor-card-fundo);
+    width: 320px;
+    padding: 30px 20px;
+    border-radius: var(--borda-raio);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform var(--tempo-animacao) ease, box-shadow var(--tempo-animacao) ease;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ÍCONE OU FOTO DENTRO DO CARD */
+.foto-circulo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    color: var(--cor-principal);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* BOTÕES DOS CARDS */
+.botao {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    background: var(--cor-principal);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background var(--tempo-animacao), transform var(--tempo-animacao);
+}
+
+.botao:hover {
+    background: #11b234; /* Transiciona para verde no hover conforme o modelo */
+    transform: scale(1.05);
+}
+
+/* RODAPÉ / FOOTER */
+.portal-footer {
+    background: var(--cor-principal);
+    color: white;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo-footer {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.footer-texto p {
+    font-size: 1rem;
+    margin: 4px 0;
+}
+
+.footer-direitos {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* RESPONSIVIDADE PARA CELULARES */
+@media (max-width: 768px) {
+    .portal-header, .portal-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-menu {
+        margin-top: 15px;
+    }
+    .nav-menu a {
+        margin: 0 10px;
+    }
+}
+
+
+
+
+
+
+/* PATINHAS----------------------------------------------------*/
+
+/* Configuração básica para garantir que a página ocupe a tela toda */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cria uma camada de fundo atrás de todo o conteúdo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Garante que a imagem fique atrás do texto */
+    
+    /* Configurações da imagem */
+    
+    background-image: url('/DogTown/img/Patinhas.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Controle da opacidade (0.0 a 1.0) */
+    opacity: 0.3; 

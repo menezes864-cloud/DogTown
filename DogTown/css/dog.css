@@ -2,17 +2,17 @@
    1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
    ========================================================================== */
 :root {
-  --primary-color: hsl(0, 100%, 100%);       
-  --primary-hover: hwb(0 3% 97%);       
-  --secondary-color: #11100bfd;    
-  --dark-color: hsl(0, 0%, 4%);          
-  --light-bg: #Efa000;           
-  --white: lch(41.38% 85.54 300.8);
-  --gray-light: hsl(0, 0%, 100%);
-  --gray-text: lab(100% 0.01 -0.01);
+  --primary-color: #ff6b35;       /* Laranja vibrante e acolhedor */
+  --primary-hover: #201d1c;       /* Tom de hover para o botão principal */
+  --secondary-color: #11100bfd;     /* Verde azulado para destaques e ícones */
+  --dark-color: hsl(0, 0%, 4%);          /* Texto e fundos escuros */
+  --light-bg: #Efa000;            /* Fundo suave num tom creme/quente */
+  --white: #ffffff;
+  --gray-light: #f1f3f5;
+  --gray-text: #6c757d;
   --border-radius: 12px;
   --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --transition: all 1.3s ease;
+  --transition: all 0.3s ease;
   --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
@@ -52,7 +52,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: lavender;
+  color: inherit;
   transition: var(--transition);
 }
 
@@ -75,7 +75,7 @@ a {
 .btn-primary:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px oklab(84.983% 0.01059 0.17312 / 0.952);
+  box-shadow: 0 6px 20px hsla(180, 92%, 49%, 0.952);
 }
 
 /* ==========================================================================
@@ -100,7 +100,7 @@ a {
 }
 
 .logo-container img {
-  height: 80px;
+  height: 50px;
   width: auto;
   object-fit: contain;
 }
@@ -148,7 +148,7 @@ a {
 
 .hero-section h1 {
   font-size: 2.4rem;
-  
+  color: var(--dark-color);
   margin-bottom: 25px;
   font-weight: 700;
 }
@@ -179,14 +179,14 @@ a {
 }
 
 .about-text h2 {
-  color: white;
+  color: var(--primary-color);
   font-size: 1.8rem;
   margin-bottom: 15px;
 }
 
 .about-text p {
   font-size: 1.05rem;
-  color: white;
+  color: #4a5568;
   margin-bottom: 15px;
 }
 
@@ -214,8 +214,8 @@ a {
 
 .mv-card h3 {
   font-size: 1.3rem;
-  margin-bottom: 20px;
-  color: white;
+  margin-bottom: 15px;
+  color: var(--dark-color);
 }
 
 .mv-card ul {
@@ -238,9 +238,9 @@ a {
 }
 
 .highlights-section h2 {
-  font-size: 6.2rem;
+  font-size: 2.2rem;
   margin-bottom: 40px;
-  color: white;
+  color: var(--dark-color);
   position: relative;
   display: inline-block;
 }
@@ -307,18 +307,18 @@ a {
 .card-content {
   padding: 25px;
   text-align: left;
-  flex-grow: 4;
+  flex-grow: 1;
 }
 
 .card-content h3 {
-  font-size: 2.25rem;
+  font-size: 1.25rem;
   color: var(--dark-color);
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .card-content p {
   color: var(--gray-text);
-  font-size: 1.55rem;
+  font-size: 0.95rem;
   line-height: 1.5;
 }
 
@@ -326,7 +326,7 @@ a {
    6. CTA (CALL TO ACTION) BANNER
    ========================================================================== */
 .cta-banner {
-  background: linear-gradient(135deg, var(--primary-color), lab(19.81% 6.43 13.8));
+  background: linear-gradient(135deg, var(--primary-color), #ff8c42);
   color: var(--white);
   padding: 60px 20px;
   border-radius: var(--border-radius);
@@ -380,7 +380,7 @@ a {
 }
 
 .footer ul a {
-  color: hsl(210, 100%, 100%);
+  color: #cbd5e1;
   font-size: 0.95rem;
 }
 
@@ -390,7 +390,7 @@ a {
 }
 
 .footer p {
-  color: #f5f8fd;
+  color: #cbd5e1;
   font-size: 0.95rem;
   margin-bottom: 8px;
 }
@@ -399,7 +399,7 @@ a {
   text-align: center;
   padding-top: 25px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #f7f9fc;
+  color: #94a3b8;
   font-size: 0.85rem;
 }
 
