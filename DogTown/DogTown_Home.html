@@ -1,51 +1,77 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" >
-    <link rel="stylesheet" href="CSS/DogTown_Menu.css">
-    <title>HOME</title>
+    <title>DogTown - Pet Shop, Hotel e Serviços</title>
+    <!-- Importação de fontes padrão utilizadas nas aulas -->
+    <link rel="stylesheet" href="https://googleapis.com">
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="css/DogTown_Home.css">
 </head>
 <body>
+
+    <!-- CABEÇALHO / MENU DE NAVEGAÇÃO -->
     <header class="portal-header">
-            <div class="logo"><img src="img/logo atual.jpeg" alt="Foto Logo" width="200" height="100"></i>Dog Town - Produtos e Serviços para cães</div>
-            <nav class="nav-menu">
-                <img src="" alt="">
-                <a href="#"><i class="fa-regular fa-house" style="color: rgb(224, 228, 234);"></i></i>Inicio</a>
-                <a href="#"><i class="fa-solid fa-bone" style="color: rgb(224, 228, 234);"></i></i>Produtos</a>
-                <a href="#"><i class="fa-solid fa-bars" style="color: rgb(224, 228, 234);"></i></i>Serviços</a>
-                <a href="#"><i class="fa-solid fa-phone-volume" style="color: rgb(224, 228, 234);"></i></i>Contatos</a>
-                <a href="#"><i class="fa-solid fa-circle-info" style="color: rgb(224, 228, 234);"></i></i>Quem Somos</a>
-            </nav>
-
-<h1>testantando github</h1>
-
+        <div class="logo">DogTown</div>
+        <nav class="nav-menu">
+            <a href="#">Início</a>
+            <a href="#">Produtos</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contatos</a>
+            <a href="#">Quem Somos</a>
+        </nav>
     </header>
-</body>
 
+    <!-- CONTEÚDO PRINCIPAL / APRESENTAÇÃO -->
+    <main class="principal">
+        <section class="boas-vindas">
+            <h1>Bem-vindo à DogTown!</h1>
+            <p>Nossa prioridade é a proteção, o carinho e a atenção que o seu melhor amigo merece.</p>
+        </section>
 
-
-
-
-
-
-
-
-
-
-
-
-    <footer class="portal-footer">
-            <div class="logo-footer"><i class="fa-solid fa-dog" style="color: rgb(224, 228, 234);"> </i>Dog Town - Produtos e Serviços para cães</div>   
-            <h2>Avenida: 25 de setembro, 925 - Marco</h2>
-            <h2>Nosso Delivery: (91) 3226-2978</h2>
-            <h2>Redes Sociais:  <i class="fa-brands fa-whatsapp" style="color: rgb(224, 228, 234);"></i> <i class="fa-brands fa-square-facebook" style="color: rgb(224, 228, 234);"></i><i class="fa-brands fa-square-instagram" style="color: rgb(224, 228, 234);"></i></h2>
-            <div class="footer-direitos">
-                <h3>&copy; Todos os direitos reservados.</h3>
+        <!-- SEÇÃO DE SERVIÇOS EM DESTAQUE (CARDS) -->
+        <h2 class="titulo-secao">Nossos Serviços</h2>
+        <section class="conteudo-cards">
+            
+            <!-- Card 1: Dog Walker -->
+            <div class="card">
+                <div class="foto-circulo">🦮</div>
+                <h2>Dog Walker</h2>
+                <p>Profissionais capacitados e experientes para acompanhar seu amigão durante as caminhadas diárias.</p>
+                <button class="botao">Ver Planos</button>
             </div>
+
+            <!-- Card 2: Hotel & Creche -->
+            <div class="card">
+                <div class="foto-circulo">🏨</div>
+                <h2>Hotel e Creche</h2>
+                <p>Instalações climatizadas, higienizadas e monitoradas 24h em tempo real para o conforto do pet.</p>
+                <button class="botao">Agendar Visita</button>
+            </div>
+
+            <!-- Card 3: Adestramento -->
+            <div class="card">
+                <div class="foto-circulo">🎾</div>
+                <h2>Adestramento</h2>
+                <p>Melhore a comunicação com seu cão através de módulos básicos ou correção de comportamento.</p>
+                <button class="botao">Conhecer</button>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- RODAPÉ DA PÁGINA -->
+    <footer class="portal-footer">
+        <div class="footer-texto">
+            <p class="logo-footer">DogTown</p>
+            <p>📍 Avenida: 25 de setembro, 925 - Marco (Belém/PA)</p>
+            <p>📞 Nosso Delivery: (91) 3226-2978</p>
+        </div>
+        <div class="footer-direitos">
+            <p>© Todos os direitos reservados.</p>
+        </div>
     </footer>
 
-
+</body>
 </html>

@@ -87,6 +87,25 @@ TODAS AS CORES T TEMPOS FICAM CENTRALIZADOS ANTERANDO APENAS UMA VARIIÁVEL, TOD
 
  }
 
+/*foto do card---------------------------------------------------------*/
+.foto-circulo {
+   
+    border-radius: 50%;
+    background: #e8e8e8;   
+    align-items: center;
+    justify-content: center;
+    color: var(--roxo);
+    font-size: 100px;
+    overflow: hidden;
+    border: 4px solid #fff;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .12);
+    cursor: pointer;
+}
+
+
+
+
+
  /*ÁREA PRINCIPAL------------------------------------------------------*/
 
  .conteudo{
@@ -112,7 +131,7 @@ TODAS AS CORES T TEMPOS FICAM CENTRALIZADOS ANTERANDO APENAS UMA VARIIÁVEL, TOD
    display: block;
    font-size: 30px;
   border-radius: 40px;
-
+cursor: pointer;
 
   
       
@@ -245,7 +264,7 @@ body::before {
     
     /* Configurações da imagem */
     
-    background-image: url('/img/Patinhas.avif');
+    background-image: url('/DogTown/img/Patinhas.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
