@@ -136,7 +136,7 @@ body::before {
     z-index: -1; /* Garante que a imagem fique atrás do texto */
     
     /* Configurações da imagem */
-    background-image: url('/do');
+    background-image: url('/dogtown/img/Patinhas.avif'); /* Substitua pelo caminho correto da sua imagem */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
