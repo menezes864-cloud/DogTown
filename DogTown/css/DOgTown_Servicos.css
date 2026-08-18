@@ -1,128 +1,173 @@
-*{
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    margin: 2px;
-    padding: 4px;
 }
 
-:root{
-    --cor-fundo: #f4f4f4;
-    --cor-card: #ffffff;
-    --cor-principal: #efa000;
-    --cor-principal-hover: #11b234;
-    --cor-texto: #ffffff;
-    --espacamento: 20px;
-    --borda: 12px;
-
-    /*Tempo de animação*/
-
-    --tempo: 0.4s;
-    /*Distância utilizada no transform*/
-    --deslocamento: -10px;
-    /*Intensidade da sombra*/
-    --sombra: 0px 8px 20px rgba(0,0,0,.15);
-}
-
-
-
-body{
-    font-family: "Edu VIC WA NT Hand", cursive;
-    background-color: var(--cor-principal);
-    color: var(--cor-texto);
-    padding: 20px;
-
-
-}
-
-/*========================
-BANNER
-++++++++++++++++++++++++++*/
-
-.banner{
-    text-align: center;
-    padding: 35px;
-    border-radius: 15px;
-    width: 100%;
-    margin-top: 35px;
-
-}
-
-.banner img{
-    width: 80%;
-    height: 500px;
-    border-radius: 15px;
-    margin-top: 20px;
-
-}
-.banner h2{
-    color: white;
-    font-size: 34px;
-}
-
-
-/*==============
-
-nosso seevicos
-====================*/
-
-.nossos-servicos{
-    display: grid;
-    grid-template-columns: 10fr;
-    grid-template-rows:  10fr 10fr 10fr 10fr;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 20px;
-
-    grid-template-areas: ;
-}
-
-
-/*=======
-
-CARDS
-
-=========*/
-.card{
-    display: inline;
-    background: #6441d9e4;
-    padding: 30px;
-    margin-top: 30px;
-    border-radius: 15px;
-    border-left: 8px solid #c0b4ec;
-    transition: var(--tempo) ease,
-    var(--deslocamento) ease,
-    var(--sombra);
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
     
 }
-.card:hover{
-     transform: translateY(var(--deslocamento)) scale(1.05);
-    box-shadow: var(--sombra);
-}
-.card h1{
-    font-size: 40px;
 
-}
-
-.card h2{
-    font-size: 20px;
+/* Banner Principal */
+.banner {
+    text-align: center;
+    background-color: #320ea5;
+    color: #ffffff;
+    padding: 40px 20px;
 }
 
-
-.card-lista{
-     display: flex;
+.banner h2 {
+    font-family: 'Edu VIC WA NT Hand', cursive, sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
+/* Layout dos Cards de Serviços */
+.nossos-servicos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
+/* Card Individual */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-________________________________________________
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
 
+/* Cabeçalho do Card (Tag) */
+.card-tag {
+    background-color: #ff9800;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+}
 
+.card-tag h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* Subtítulo do Card */
+.card > h2 {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 15px 20px 5px 20px;
+    text-align: center;
+    min-height: 60px;
+}
+
+/* Área de Conteúdo (Imagem + Lista) */
+.card-lista {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-lista img {
+    width: 100%;
+    max-width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card-lista ul {
+    list-style-type: none;
+    width: 100%;
+    text-align: left;
+}
+
+.card-lista ul h1 {
+    font-size: 1.1rem;
+    color: #2b3a4a;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ff9800;
+    padding-bottom: 4px;
+}
+
+.card-lista li {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 18px;
+}
+
+.card-lista li::before {
+    content: "•";
+    color: #ff9800;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* Botões dos Cards */
+.card button {
+    background-color: #2b3a4a;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    margin: 15px 20px 20px 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #ff9800;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}
 /* Configuração básica para garantir que a página ocupe a tela toda */
-html, body {
+ body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    background-color: #efa000; /* Cor de fundo padrão */
 }
 
 /* Cria uma camada de fundo atrás de todo o conteúdo */
