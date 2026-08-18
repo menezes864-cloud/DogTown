@@ -181,7 +181,7 @@ body::before {
     z-index: -1; /* Garante que a imagem fique atrás do texto */
     
     /* Configurações da imagem */
-    background-image: url('/do');
+    background-image: url('/DogTown/img/Patinhas.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
