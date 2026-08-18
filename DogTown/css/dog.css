@@ -1,19 +1,27 @@
 /* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   1. VARIÁVEIS E RESET
    ========================================================================== */
 :root {
-  --primary-color: hsl(0, 100%, 100%);       
-  --primary-hover: hwb(0 3% 97%);       
-  --secondary-color: #11100bfd;    
-  --dark-color: hsl(0, 0%, 4%);          
-  --light-bg: #Efa000;           
-  --white: lch(41.38% 85.54 300.8);
-  --gray-light: hsl(0, 0%, 100%);
-  --gray-text: lab(100% 0.01 -0.01);
-  --border-radius: 12px;
-  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --transition: all 1.3s ease;
-  --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --primary: #ff6b35;
+  --primary-hover: #e85a24;
+  --secondary: #2b2d42;
+  --accent: #fdb500;
+  --bg-main: #Efa000;
+  --bg-card: #fcfcfc;
+  --text-main: #1d2d44;
+  --text-muted: #070707;
+  --border-color: #101011;
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.08);
+  
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
 * {
@@ -28,16 +36,16 @@ html {
 
 body {
   font-family: var(--font-family);
-  background-color: var(--light-bg);
-  color: var(--dark-color);
+  background-color: var(--bg-main);
+  color: var(--text-main);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Limitador de largura para alinhamento */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 img {
@@ -52,7 +60,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: lavender;
+  color: inherit;
   transition: var(--transition);
 }
 
@@ -60,66 +68,77 @@ a {
    2. BOTÕES
    ========================================================================== */
 .btn-primary {
-  background-color: var(--primary-color);
-  color: var(--white);
-  padding: 12px 26px;
-  border-radius: 30px;
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 50px;
   font-weight: 600;
-  display: inline-block;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
   transition: var(--transition);
 }
 
 .btn-primary:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px oklab(84.983% 0.01059 0.17312 / 0.952);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.35);
+}
+
+.btn-large {
+  padding: 16px 36px;
+  font-size: 1.1rem;
 }
 
 /* ==========================================================================
-   3. CABEÇALHO / NAVBAR
+   3. CABEÇALHO / NAVBAR (Glassmorphism)
    ========================================================================== */
 .navbar {
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 5%;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  background-color: #320ea5;
 }
 
 .logo-container img {
-  height: 80px;
+  height: 42px;
   width: auto;
   object-fit: contain;
 }
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 32px;
 }
 
 .nav-links a {
   font-weight: 600;
-  color: var(--dark-color);
-  padding: 5px 0;
+  font-size: 0.95rem;
+  color: white;
   position: relative;
+  padding: 4px 0;
+ 
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--primary-color);
+  color: var(--primary);
 }
 
 .nav-links a.active::after {
@@ -128,310 +147,376 @@ a {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 3px;
-  background-color: var(--primary-color);
+  height: 2px;
+  background-color: var(--primary);
   border-radius: 2px;
 }
 
-/* Placeholder da logo caso não haja imagem */
-.logo-placeholder {
-  display: none; /* Ativado via CSS caso a imagem falhe */
-}
-
 /* ==========================================================================
-   4. HERO / SEÇÃO QUEM SOMOS
+   4. HERO / QUEM SOMOS
    ========================================================================== */
 .hero-section {
-  padding: 50px 0 30px;
-  text-align: center;
+  padding: 64px 0 40px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(255, 253, 252, 0.1);
+  color: var(--primary);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
 }
 
 .hero-section h1 {
-  font-size: 2.4rem;
-  
-  margin-bottom: 25px;
-  font-weight: 700;
+  font-size: 2.75rem;
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--secondary);
+  max-width: 800px;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
 }
 
 .main-banner {
-  width: 100%;
-  max-height: 450px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  margin-bottom: 40px;
+  box-shadow: var(--shadow-md);
+  height: 100%;
+  min-height: 400px;
 }
 
 .main-banner img {
   width: 100%;
-  height: 450px;
+  height: 100%;
   object-fit: cover;
 }
 
 .about-text {
-  max-width: 800px;
-  margin: 0 auto 40px;
-  text-align: left;
-  background: var(--white);
-  padding: 35px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  background: var(--bg-card);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
 }
 
 .about-text h2 {
-  color: white;
-  font-size: 1.8rem;
-  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: var(--secondary);
+  margin-bottom: 16px;
 }
 
 .about-text p {
-  font-size: 1.05rem;
-  color: white;
-  margin-bottom: 15px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  font-size: 0.95rem;
 }
 
-/* Missão e Valores Grid */
+/* Missão e Valores */
 .mv-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.mv-card {
-  background: var(--white);
-  padding: 30px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  text-align: left;
-  border-top: 4px solid var(--secondary-color);
-  transition: var(--transition);
-}
-
-.mv-card:hover {
-  transform: translateY(-5px);
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
 }
 
 .mv-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-  color: white;
-}
-
-.mv-card ul {
-  padding-left: 20px;
-}
-
-.mv-card li {
-  list-style-type: disc;
+  font-size: 1.1rem;
+  color: var(--secondary);
   margin-bottom: 8px;
-  color: var(--gray-text);
-  font-weight: 500;
+}
+
+.mv-card p {
+  margin-bottom: 0;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tag-list li {
+  background-color: var(--bg-main);
+  color: var(--secondary);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
 }
 
 /* ==========================================================================
    5. DESTAQUES / SERVIÇOS
    ========================================================================== */
 .highlights-section {
-  padding: 60px 0;
+  padding: 80px 0;
+}
+
+.section-header {
   text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
 }
 
-.highlights-section h2 {
-  font-size: 6.2rem;
-  margin-bottom: 40px;
-  color: white;
-  position: relative;
-  display: inline-block;
+.section-header h2 {
+  font-size: 2.25rem;
+  color: var(--secondary);
+  font-weight: 800;
+  margin-bottom: 8px;
 }
 
-.highlights-section h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background-color: var(--primary-color);
-  margin: 8px auto 0;
-  border-radius: 2px;
+.section-header p {
+  color: var(--text-muted);
 }
 
 .highlights-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
-/* Cards */
 .card {
-  background: var(--white);
-  border-radius: var(--border-radius);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
   transition: var(--transition);
   display: flex;
   flex-direction: column;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 107, 53, 0.2);
 }
 
 .card-img-container {
-  position: relative;
   height: 200px;
-  background-color: var(--gray-light);
+  overflow: hidden;
 }
 
 .card-img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-/* Fallback/Placeholder de imagem */
-.img-placeholder {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #e2e8f0;
-  align-items: center;
-  justify-content: center;
-  color: var(--gray-text);
-  font-weight: 600;
+.card:hover .card-img-container img {
+  transform: scale(1.05);
 }
 
 .card-content {
-  padding: 25px;
-  text-align: left;
-  flex-grow: 4;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .card-content h3 {
-  font-size: 2.25rem;
-  color: var(--dark-color);
-  margin-bottom: 40px;
+  font-size: 1.2rem;
+  color: var(--secondary);
+  margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .card-content p {
-  color: var(--gray-text);
-  font-size: 1.55rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 
 /* ==========================================================================
-   6. CTA (CALL TO ACTION) BANNER
+   6. CALL TO ACTION (CTA)
    ========================================================================== */
 .cta-banner {
-  background: linear-gradient(135deg, var(--primary-color), lab(19.81% 6.43 13.8));
-  color: var(--white);
-  padding: 60px 20px;
-  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, var(--secondary) 0%, #1a1c29 100%);
+  color: #ffffff;
+  padding: 64px 32px;
+  border-radius: var(--radius-lg);
   text-align: center;
-  margin: 40px auto 60px;
-  box-shadow: var(--box-shadow);
+  margin: 40px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-banner h2 {
   font-size: 2rem;
-  margin-bottom: 25px;
+  font-weight: 800;
+  margin-bottom: 12px;
 }
 
-.cta-banner .btn-primary {
-  background-color: var(--white);
-  color: var(--primary-color);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-.cta-banner .btn-primary:hover {
-  background-color: var(--dark-color);
-  color: var(--white);
+.cta-banner p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 28px;
+  font-size: 1.05rem;
 }
 
 /* ==========================================================================
    7. RODAPÉ (FOOTER)
    ========================================================================== */
 .footer {
-  background-color: var(--dark-color);
-  color: var(--white);
-  padding: 60px 5% 20px;
-  margin-top: 40px;
+  background-color: var(--secondary);
+  color: #ffffff;
+  padding: 64px 0 32px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: 2fr repeat(3, 1fr);
   gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto 40px;
+  margin-bottom: 48px;
 }
 
-.footer h4 {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  color: var(--primary-color);
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
 }
 
-.footer ul li {
+.footer-col p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.footer-col h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--accent);
+}
+
+.footer-col ul li {
   margin-bottom: 10px;
 }
 
-.footer ul a {
-  color: hsl(210, 100%, 100%);
-  font-size: 0.95rem;
+.footer-col ul a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
 }
 
-.footer ul a:hover {
-  color: var(--white);
-  padding-left: 5px;
+.footer-col ul a:hover {
+  color: #ffffff;
 }
 
-.footer p {
-  color: #f5f8fd;
-  font-size: 0.95rem;
-  margin-bottom: 8px;
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.social-links a:hover {
+  color: #ffffff;
 }
 
 .copyright {
   text-align: center;
-  padding-top: 25px;
+  padding-top: 32px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #f7f9fc;
+  color: rgba(255, 255, 255, 0.5);
   font-size: 0.85rem;
 }
 
 /* ==========================================================================
-   8. RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
+   8. RESPONSIVIDADE
    ========================================================================== */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 768px) {
-  .navbar {
+  .nav-container {
     flex-direction: column;
-    gap: 15px;
-    padding: 15px;
+    gap: 16px;
   }
 
   .nav-links {
-    gap: 15px;
-    font-size: 0.95rem;
+    gap: 16px;
   }
 
   .hero-section h1 {
-    font-size: 1.8rem;
-  }
-
-  .main-banner,
-  .main-banner img {
-    height: 250px;
-  }
-
-  .about-text {
-    padding: 20px;
+    font-size: 2rem;
   }
 
   .cta-banner h2 {
     font-size: 1.5rem;
   }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cria uma camada de fundo atrás de todo o conteúdo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Garante que a imagem fique atrás do texto */
+    
+    /* Configurações da imagem */
+    background-image: url('/DogTown/img/Patinhas.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Controle da opacidade (0.0 a 1.0) */
+    opacity: 0.3; 
 }
