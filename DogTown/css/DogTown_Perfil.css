@@ -17,7 +17,10 @@
     --sombra:0 12px 35px rgba(50,14,165,.10);
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
+*{  margin:0;
+    padding:0;
+    box-sizing:border-box
+}
 
 html{scroll-behavior:smooth}
 
@@ -25,7 +28,7 @@ body{
    
     margin: 0;
     height: 100vh;
-    background: url('Patinhas.avif') center/COVER repeat;
+    background: url('../img/Patinhas.avif') center/COVER repeat;
     
 }
 
