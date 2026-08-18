@@ -29,7 +29,10 @@ body{
     background-color: var(--cor-principal);
     color: var(--cor-texto);
     padding: 20px;
+    margin: 0 auto;
+    
 
+    
 
 }
 
@@ -43,6 +46,7 @@ BANNER
     border-radius: 15px;
     width: 100%;
     margin-top: 35px;
+    
 
 }
 
@@ -55,7 +59,7 @@ BANNER
 }
 .banner h2{
     color: white;
-    font-size: 34px;
+    font-size: 30px;
 }
 
 
@@ -68,11 +72,11 @@ nosso seevicos
     display: grid;
     grid-template-columns: 10fr;
     grid-template-rows:  10fr 10fr 10fr 10fr;
-    max-width: 1200px;
+    max-width: 80%;
     margin: 0 auto;
     gap: 20px;
 
-    grid-template-areas: ;
+
 }
 
 
@@ -85,6 +89,8 @@ CARDS
     display: inline;
     background: #6441d9e4;
     padding: 30px;
+    width: auto;
+    height: 600px;
     margin-top: 30px;
     border-radius: 15px;
     border-left: 8px solid #c0b4ec;
@@ -92,11 +98,13 @@ CARDS
     var(--deslocamento) ease,
     var(--sombra);
     
+    
 }
 .card:hover{
      transform: translateY(var(--deslocamento)) scale(1.05);
     box-shadow: var(--sombra);
 }
+
 .card h1{
     font-size: 40px;
 
@@ -109,6 +117,21 @@ CARDS
 
 .card-lista{
      display: flex;
+     justify-content: first baseline;
+     
+}
+ ul{
+    margin-left: 300px;
+ }
+.saiba-mais{
+    position: absolute;
+    display: flex;
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+
+
+       
 }
 
 
@@ -136,7 +159,7 @@ body::before {
     z-index: -1; /* Garante que a imagem fique atrás do texto */
     
     /* Configurações da imagem */
-    background-image: url('/do');
+    background-image: url('/DogTown/img/Patinhas.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
