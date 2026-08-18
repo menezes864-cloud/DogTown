@@ -11,7 +11,7 @@
   --gray-light: hsl(0, 0%, 100%);
   --gray-text: lab(100% 0.01 -0.01);
   --border-radius: 12px;
-  --box-shadow: 0 8px 24px rgba(248, 236, 236, 0.08);
+  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   --transition: all 1.3s ease;
   --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
