@@ -17,7 +17,6 @@ body {
 /* Banner Principal */
 .banner {
     text-align: center;
-    background-color: #320ea5;
     color: #ffffff;
     padding: 40px 20px;
 }
@@ -162,7 +161,7 @@ body {
     }
 }
 /* Configuração básica para garantir que a página ocupe a tela toda */
- body {
+  body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -171,7 +170,7 @@ body {
 }
 
 /* Cria uma camada de fundo atrás de todo o conteúdo */
-body::before {
+ body::before {
     content: "";
     position: fixed;
     top: 0;
@@ -189,3 +188,5 @@ body::before {
     /* Controle da opacidade (0.0 a 1.0) */
     opacity: 0.3; 
 }
+
+ 
