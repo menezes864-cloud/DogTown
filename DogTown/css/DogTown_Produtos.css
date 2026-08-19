@@ -66,6 +66,7 @@ body {
     margin-bottom: 12px;
 }
 
+
 /* Ajustes de layout para telas menores */
 @media (max-width: 768px) {
     .categoria {
