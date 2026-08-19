@@ -35,11 +35,16 @@ body{
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
-    outline:3px solid rgba(239,160,0,.45);
+    outline:3px solid rgba(179, 124, 15, 0.45);
     outline-offset:2px;
 }
 
-.pagina{width:100%;max-width:1400px;min-height:100vh;margin:auto}
+.pagina{
+    width:100%;
+    max-width:1400px;
+    min-height:100vh;
+    margin:auto
+}
 
 .topo{
     width:calc(100% - 36px);
@@ -57,7 +62,14 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 }
 
 .logo{width:210px;height:82px;display:flex;align-items:center;overflow:hidden;flex-shrink:0}
-.logo img{width:210px;height:82px;object-fit:contain;object-position:left center;display:block;mix-blend-mode:screen}
+.logo img{
+    width:210px;
+    height:200px;
+    object-fit:contain;
+    object-position:left center;
+    display:flex;
+    mix-blend-mode:screen
+}
 
 .acoes{display:flex;align-items:center;gap:12px}
 .acoes button{
