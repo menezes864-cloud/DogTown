@@ -1,0 +1,662 @@
+/* ==========================================================================
+   1. RESET & GENERAL STYLES
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #2b2b2b;
+    background-color: #fdfdfd;
+    line-height: 1.6;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   2. BUTTONS & UI COMPONENTS
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(50, 14, 165, 0.2);
+}
+
+.btn-primary {
+    background-color: #efa000;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #d89000;
+}
+
+.btn-outline {
+    border: 2px solid #320ea5;
+    color: #320ea5;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: #320ea5;
+    color: #ffffff;
+}
+
+.btn-light {
+    background-color: #ffffff;
+    color: #320ea5;
+}
+
+.btn-light:hover {
+    background-color: #f0eaff;
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1eb857;
+}
+
+.section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading span {
+    color: #efa000;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.section-heading h2 {
+    font-size: 2.2rem;
+    color: #320ea5;
+    margin: 8px 0;
+}
+
+.section-heading p {
+    color: #555;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   3. HEADER & NAVIGATION
+   ========================================================================== */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(50, 14, 165, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 5%;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo img {
+    object-fit: contain;
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+}
+
+.navigation a {
+    font-weight: 600;
+    color: #320ea5;
+}
+
+.navigation a:hover {
+    color: #efa000;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.login {
+    font-weight: 600;
+    color: #320ea5;
+}
+
+.login:hover {
+    color: #efa000;
+}
+
+.search {
+    background-color: #f0ebff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #320ea5;
+    font-weight: 500;
+}
+
+.search:hover {
+    background-color: #e2d7ff;
+}
+
+.phone {
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #efa000;
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+.hero {
+    background: linear-gradient(135deg, #f7f3ff 0%, #ffffff 100%);
+    padding: 60px 5%;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #fff4d9;
+    color: #efa000;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: #320ea5;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 span {
+    color: #efa000;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 25px;
+    max-width: 480px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(50, 14, 165, 0.15);
+    max-height: 450px;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   5. BENEFITS / DIFERENCIAIS
+   ========================================================================== */
+.benefits {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: -30px auto 40px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(50, 14, 165, 0.08);
+    position: relative;
+    z-index: 10;
+    gap: 20px;
+    border-bottom: 3px solid #efa000;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    background-color: #f0ebff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.benefit strong {
+    display: block;
+    color: #320ea5;
+}
+
+.benefit span {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* ==========================================================================
+   6. SERVICES
+   ========================================================================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e8e3f5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(50, 14, 165, 0.12);
+    border-color: #efa000;
+}
+
+.circle-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 3px solid #efa000;
+}
+
+.circle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: #320ea5;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.service-card a {
+    color: #efa000;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   7. PRODUCTS
+   ========================================================================== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e8e3f5;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #efa000;
+}
+
+.product-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-content {
+    padding: 15px;
+}
+
+.product-content span {
+    font-size: 0.75rem;
+    color: #efa000;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.product-content h3 {
+    font-size: 1.1rem;
+    margin: 5px 0 15px;
+    color: #320ea5;
+}
+
+.product-content a {
+    color: #320ea5;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.product-content a:hover {
+    color: #efa000;
+}
+
+/* ==========================================================================
+   8. ABOUT / SOBRE
+   ========================================================================== */
+.about {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(50, 14, 165, 0.1);
+}
+
+.about-content {
+    flex: 1;
+}
+
+.eyebrow {
+    color: #efa000;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.about-content h2 {
+    font-size: 2.2rem;
+    color: #320ea5;
+    margin: 10px 0 20px;
+    line-height: 1.2;
+}
+
+.about-content h2 span {
+    color: #efa000;
+}
+
+.about-content p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.about-stats {
+    display: flex;
+    gap: 30px;
+    margin: 25px 0;
+}
+
+.about-stats strong {
+    display: block;
+    font-size: 1.5rem;
+    color: #efa000;
+}
+
+.about-stats span {
+    font-size: 0.85rem;
+    color: #320ea5;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   9. CALL TO ACTION (CTA)
+   ========================================================================== */
+.cta {
+    background-color: #320ea5;
+    color: #ffffff;
+    text-align: center;
+    padding: 70px 20px;
+    margin-top: 40px;
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-content span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #efa000;
+}
+
+.cta-content h2 {
+    font-size: 2.2rem;
+    margin: 10px 0 15px;
+}
+
+.cta-content h2 strong {
+    color: #efa000;
+}
+
+.cta-content p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* ==========================================================================
+   10. FOOTER
+   ========================================================================== */
+.footer {
+    background-color: #1e076b;
+    color: #d1c7f0;
+    padding: 60px 5% 20px;
+}
+
+.footer-main {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.footer-brand .footer-logo {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.footer-brand .footer-logo strong {
+    color: #efa000;
+}
+
+.footer-brand p {
+    font-size: 0.85rem;
+    color: #b3a5e0;
+}
+
+.footer-column h3 {
+    color: #efa000;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.footer-column a, .footer-column span, .footer-column strong {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #d1c7f0;
+}
+
+.footer-column a:hover {
+    color: #efa000;
+}
+
+.footer-column strong {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #3a19a5;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #9382cc;
+}
+
+/* ==========================================================================
+   11. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 900px) {
+    .hero-content, .about {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-text p, .about-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons, .cta-buttons {
+        justify-content: center;
+    }
+
+    .benefits {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 90%;
+    }
+
+    .about-stats {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-top {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
