@@ -139,16 +139,13 @@ a {
     gap: 20px;
 }
 
-/*
+
 .logo img {
     object-fit: contain;
 }
-*/
 
-img{
-   
 
-}
+
 
 .navigation {
     display: flex;
