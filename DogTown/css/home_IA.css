@@ -11,7 +11,7 @@ html {
     scroll-behavior: smooth;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     color: #2b2b2b;
-    background-color: #fdfdfd;
+    background-color: #efa000;
     line-height: 1.6;
 }
 
@@ -124,7 +124,7 @@ a {
    3. HEADER & NAVIGATION
    ========================================================================== */
 .header {
-    background-color: #ffffff;
+    background-color: #320ea5;
     box-shadow: 0 2px 10px rgba(50, 14, 165, 0.08);
     position: sticky;
     top: 0;
@@ -139,18 +139,25 @@ a {
     gap: 20px;
 }
 
+/*
 .logo img {
     object-fit: contain;
+}
+*/
+
+img{
+   
+
 }
 
 .navigation {
     display: flex;
-    gap: 20px;
+    gap: 50px;
 }
 
 .navigation a {
     font-weight: 600;
-    color: #320ea5;
+    color: white;
 }
 
 .navigation a:hover {
@@ -165,7 +172,7 @@ a {
 
 .login {
     font-weight: 600;
-    color: #320ea5;
+    color: white;
 }
 
 .login:hover {
@@ -173,23 +180,23 @@ a {
 }
 
 .search {
-    background-color: #f0ebff;
+    background-color: #efa000;
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.9rem;
-    color: #320ea5;
+    color: white;
     font-weight: 500;
 }
 
 .search:hover {
-    background-color: #e2d7ff;
+    background-color: #7fef00;
 }
 
 .phone {
     text-align: right;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #efa000;
+    color: WHITE;
     margin-top: 4px;
 }
 
@@ -444,6 +451,9 @@ a {
     display: flex;
     align-items: center;
     gap: 50px;
+    background-color: #ffffff;
+    opacity: 0.9;
+    border-radius: 16px;
 }
 
 .about-image {
@@ -659,4 +669,36 @@ a {
         gap: 10px;
         text-align: center;
     }
+}
+
+/*----------------------------------
+PATINHAS
+------------------------------------*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cria uma camada de fundo atrás de todo o conteúdo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Garante que a imagem fique atrás do texto */
+    
+    /* Configurações da imagem */
+    
+    background-image: url('/DogTown/img/Patinhas.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Controle da opacidade (0.0 a 1.0) */
+    opacity: 0.3; 
 }
