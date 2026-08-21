@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DogTown | Meu Carrinho</title>
+
+    <link rel="stylesheet" href="/carrinho_IA.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="portal-header">
+
+        <a href="#" class="logo">
+            <img src="/Logo DogTown PNG.png"
+                alt="Logo DogTown">
+        </a>
+
+        <nav class="nav-menu">
+
+            <a href="#">
+                <i class="fa-solid fa-house"></i>
+                <span>Início</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-bone"></i>
+                <span>Produtos</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-scissors"></i>
+                <span>Serviços</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-phone"></i>
+                <span>Contatos</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Quem Somos</span>
+            </a>
+
+            <a href="#" class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">3</span>
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container">
+
+        <!-- TÍTULO -->
+        <section class="page-title">
+
+            <span class="title-icon">
+                <i class="fa-solid fa-paw"></i>
+            </span>
+
+            <div>
+                <h1>Meu Carrinho</h1>
+                <p>Confira seus produtos antes de finalizar a compra.</p>
+            </div>
+
+        </section>
+
+
+        <div class="checkout-layout">
+
+            <!-- =========================
+                 LADO ESQUERDO
+            ========================== -->
+
+            <section class="left-column">
+
+                <!-- PRODUTOS -->
+                <div class="card">
+
+                    <div class="card-header">
+                        <div>
+                            <h2>
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                Seus produtos
+                            </h2>
+
+                            <p>3 itens no seu carrinho</p>
+                        </div>
+                    </div>
+
+
+                    <!-- PRODUTO 1 -->
+                    <article class="product">
+
+                        <div class="product-image">
+                            <i class="fa-solid fa-bone"></i>
+                        </div>
+
+                        <div class="product-info">
+
+                            <h3>Ração Premium para Cães</h3>
+
+                            <p>
+                                Alimentação completa e balanceada
+                            </p>
+
+                            <span class="product-price">
+                                R$ 89,90
+                            </span>
+
+                        </div>
+
+                        <div class="quantity">
+
+                            <button type="button">
+                                −
+                            </button>
+
+                            <span>2</span>
+
+                            <button type="button">
+                                +
+                            </button>
+
+                        </div>
+
+                        <strong class="product-total">
+                            R$ 179,80
+                        </strong>
+
+                    </article>
+
+
+                    <!-- PRODUTO 2 -->
+                    <article class="product">
+
+                        <div class="product-image">
+                            <i class="fa-solid fa-dog"></i>
+                        </div>
+
+                        <div class="product-info">
+
+                            <h3>Brinquedo para Cachorro</h3>
+
+                            <p>
+                                Brinquedo resistente e divertido
+                            </p>
+
+                            <span class="product-price">
+                                R$ 39,90
+                            </span>
+
+                        </div>
+
+                        <div class="quantity">
+
+                            <button type="button">
+                                −
+                            </button>
+
+                            <span>1</span>
+
+                            <button type="button">
+                                +
+                            </button>
+
+                        </div>
+
+                        <strong class="product-total">
+                            R$ 39,90
+                        </strong>
+
+                    </article>
+
+
+                    <!-- PRODUTO 3 -->
+                    <article class="product">
+
+                        <div class="product-image">
+                            <i class="fa-solid fa-paw"></i>
+                        </div>
+
+                        <div class="product-info">
+
+                            <h3>Kit de Higiene Pet</h3>
+
+                            <p>
+                                Cuidados especiais para seu pet
+                            </p>
+
+                            <span class="product-price">
+                                R$ 129,90
+                            </span>
+
+                        </div>
+
+                        <div class="quantity">
+
+                            <button type="button">
+                                −
+                            </button>
+
+                            <span>3</span>
+
+                            <button type="button">
+                                +
+                            </button>
+
+                        </div>
+
+                        <strong class="product-total">
+                            R$ 389,70
+                        </strong>
+
+                    </article>
+
+                </div>
+
+
+                <!-- ENDEREÇO -->
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h2>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Endereço de entrega
+                            </h2>
+
+                            <p>Informe onde deseja receber seu pedido.</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form class="delivery-form">
+
+                        <div class="form-group full">
+
+                            <label for="endereco">
+                                Endereço
+                            </label>
+
+                            <input
+                                type="text"
+                                id="endereco"
+                                placeholder="Rua, avenida, número..."
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="bairro">
+                                Bairro
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bairro"
+                                placeholder="Digite seu bairro"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="cep">
+                                CEP
+                            </label>
+
+                            <input
+                                type="text"
+                                id="cep"
+                                placeholder="00000-000"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="cidade">
+                                Cidade
+                            </label>
+
+                            <select id="cidade" required>
+
+                                <option value="">
+                                    Selecione sua cidade
+                                </option>
+
+                                <option>
+                                    Belém
+                                </option>
+
+                                <option>
+                                    Ananindeua
+                                </option>
+
+                                <option>
+                                    Marituba
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="telefone">
+                                Telefone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telefone"
+                                placeholder="(91) 99999-9999"
+                                required>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <!-- PAGAMENTO -->
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h2>
+                                <i class="fa-solid fa-credit-card"></i>
+                                Forma de pagamento
+                            </h2>
+
+                            <p>
+                                Escolha como deseja pagar seu pedido.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="payment-options">
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="pagamento"
+                                value="cartao">
+
+                            <div class="payment-content">
+
+                                <div class="payment-icon">
+                                    <i class="fa-solid fa-credit-card"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Cartão</strong>
+                                    <span>Crédito ou débito</span>
+                                </div>
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="pagamento"
+                                value="pix">
+
+                            <div class="payment-content">
+
+                                <div class="payment-icon pix">
+                                    <i class="fa-brands fa-pix"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Pix</strong>
+                                    <span>Pagamento instantâneo</span>
+                                </div>
+
+                                <i class="fa-solid fa-check"></i>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 RESUMO DA COMPRA
+            ========================== -->
+
+            <aside class="summary">
+
+                <div class="summary-header">
+
+                    <h2>
+                        Resumo da compra
+                    </h2>
+
+                    <i class="fa-solid fa-receipt"></i>
+
+                </div>
+
+
+                <div class="summary-line">
+
+                    <span>Subtotal</span>
+
+                    <strong>
+                        R$ 609,40
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-line">
+
+                    <span>Frete</span>
+
+                    <strong class="free">
+                        Grátis
+                    </strong>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <div class="summary-total">
+
+                    <span>Total</span>
+
+                    <strong>
+                        R$ 609,40
+                    </strong>
+
+                </div>
+
+
+                <button class="checkout-button">
+
+                    <span>
+                        Concluir compra
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <a href="#" class="continue-shopping">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Continuar comprando
+
+                </a>
+
+
+                <div class="secure">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <div>
+
+                        <strong>
+                            Compra segura
+                        </strong>
+
+                        <span>
+                            Seus dados estão protegidos
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <div class="footer-logo">
+            <i class="fa-solid fa-paw"></i>
+            DogTown
+        </div>
+
+        <p>
+            Cuidando de quem faz parte da sua família.
+        </p>
+
+        <div class="footer-social">
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
