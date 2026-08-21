@@ -56,13 +56,20 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
     align-items:center;
     justify-content:space-between;
     gap:20px;
-    color:#fff;
-    background:linear-gradient(110deg,#3500a8,#4200b7);
+    color:#321d7e;
+    background:var(--roxo); 
+    opacity: 0.8; 
     border-radius:0 0 22px 22px;
     box-shadow:0 8px 25px rgba(50,14,165,.16);
 }
 
-.logo{width:210px;height:82px;display:flex;align-items:center;overflow:hidden;flex-shrink:0}
+.logo{width:210px;
+    height:82px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    flex-shrink:0
+}
 .logo img{
     width:210px;
     height:200px;
