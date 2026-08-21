@@ -193,6 +193,72 @@ CARDS
 }
 
 
+/*  ------------*/
+
+/* ==========================================================================
+   10. FOOTER
+   ========================================================================== */
+.footer {
+    background-color: #1e076b;
+    color: #d1c7f0;
+    padding: 60px 5% 20px;
+}
+
+.footer-main {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+.footer-brand .footer-logo {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.footer-brand .footer-logo strong {
+    color: #efa000;
+}
+
+.footer-brand p {
+    font-size: 0.85rem;
+    color: #b3a5e0;
+}
+
+.footer-column h3 {
+    color: #efa000;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.footer-column a, .footer-column span, .footer-column strong {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #d1c7f0;
+}
+
+.footer-column a:hover {
+    color: #efa000;
+}
+
+.footer-column strong {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #3a19a5;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #9382cc;
+}
+
 
 
 ________________________________________________
