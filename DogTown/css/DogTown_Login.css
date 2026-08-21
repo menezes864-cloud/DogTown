@@ -134,7 +134,10 @@ TODAS AS CORES T TEMPOS FICAM CENTRALIZADOS ANTERANDO APENAS UMA VARIIÁVEL, TOD
     box-shadow: 0 0 10px rgba(0,0,0,.08);
 
     opacity: 0.9; 
- 
+
+    /*------------------------------------------------------------*/
+
+
 
  /*trasition----------------------------------------------------------
 
@@ -245,7 +248,7 @@ body::before {
     
     /* Configurações da imagem */
     
-    background-image: url('/img/Patinhas.avif');
+    background-image: url('/DogTown/img/Patinhas.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
