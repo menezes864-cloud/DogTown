@@ -164,7 +164,7 @@ CARDS
 =========*/
 .card{
     display: inline;
-    background: #6441d9e4;
+    background: #320ea5;
     padding: 30px;
     margin-top: 30px;
     border-radius: 15px;
@@ -172,6 +172,7 @@ CARDS
     transition: var(--tempo) ease,
     var(--deslocamento) ease,
     var(--sombra);
+    opacity: 0.8;
     
 }
 .card:hover{
