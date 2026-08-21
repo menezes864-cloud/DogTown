@@ -9,9 +9,9 @@
   --light-bg: #Efa000;            /* Fundo suave num tom creme/quente */
   --white: #ffffff;
   --gray-light: #f1f3f5;
-  --gray-text: #6c757d;
+  --gray-text: hwb(0 1% 99%);
   --border-radius: 12px;
-  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --box-shadow: 0 20px 24px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
   --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
@@ -52,7 +52,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: white;
   transition: var(--transition);
 }
 
@@ -82,25 +82,25 @@ a {
    3. CABEÇALHO / NAVBAR
    ========================================================================== */
 .navbar {
-  background-color: var(--white);
+  background-color: #320ea5c2;
   position: sticky;
-  top: 0;
+  top: 20;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 5%;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 15px rgba(255, 255, 255, 0.05);
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 100px;
 }
 
 .logo-container img {
-  height: 50px;
+  height: 200px;
   width: auto;
   object-fit: contain;
 }
@@ -112,7 +112,7 @@ a {
 
 .nav-links a {
   font-weight: 600;
-  color: var(--dark-color);
+  color: white;
   padding: 5px 0;
   position: relative;
 }
@@ -297,7 +297,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #e2e8f0;
+  background: hsl(214, 66%, 58%);
   align-items: center;
   justify-content: center;
   color: var(--gray-text);
@@ -326,7 +326,7 @@ a {
    6. CTA (CALL TO ACTION) BANNER
    ========================================================================== */
 .cta-banner {
-  background: linear-gradient(135deg, var(--primary-color), #ff8c42);
+  background: linear-gradient(135deg, var(--primary-color), lab(69.76% 38.24 56.93));
   color: var(--white);
   padding: 60px 20px;
   border-radius: var(--border-radius);
@@ -380,7 +380,7 @@ a {
 }
 
 .footer ul a {
-  color: #cbd5e1;
+  color: #3982db;
   font-size: 0.95rem;
 }
 
@@ -390,7 +390,7 @@ a {
 }
 
 .footer p {
-  color: #cbd5e1;
+  color: #60a4f7;
   font-size: 0.95rem;
   margin-bottom: 8px;
 }
@@ -435,3 +435,36 @@ a {
     font-size: 1.5rem;
   }
 }
+
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cria uma camada de fundo atrás de todo o conteúdo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Garante que a imagem fique atrás do texto */
+    
+    /* Configurações da imagem */
+    
+    background-image: url('/DogTown/img/Patinhas.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Controle da opacidade (0.0 a 1.0) */
+    opacity: 0.3; 
+}
+
+
