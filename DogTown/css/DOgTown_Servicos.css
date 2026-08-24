@@ -130,6 +130,9 @@ body::before {
     width: 100%;
     max-width: 1200px;
     margin: 20px auto 0;
+    background-color: var(--cor-roxo);
+    border-radius: 30px;
+    opacity: 0.9;
 }
 
 .banner h2 {
