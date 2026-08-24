@@ -1,104 +1,113 @@
-*{
+/* ==========================================================================
+   1. RESET & VARIÁVEIS
+   ========================================================================== */
+* {
     box-sizing: border-box;
-    margin: 2px;
-    padding: 4px;
+    margin: 0;
+    padding: 0;
 }
 
-:root{
+:root {
     --cor-fundo: #f4f4f4;
     --cor-card: #ffffff;
     --cor-principal: #efa000;
     --cor-principal-hover: #11b234;
     --cor-texto: #ffffff;
+    --cor-roxo: #320ea5;
     --espacamento: 20px;
     --borda: 12px;
-
-    /*Tempo de animação*/
-
     --tempo: 0.4s;
-    /*Distância utilizada no transform*/
-    --deslocamento: -10px;
-    /*Intensidade da sombra*/
+    --deslocamento: -6px;
     --sombra: 0px 8px 20px rgba(0,0,0,.15);
 }
 
+html, body {
+    width: 100%;
+    min-height: 100vh;
+}
 
-
-body{
-    font-family: "Edu VIC WA NT Hand", cursive;
+body {
+    font-family: "arial", sans-serif;
     background-color: var(--cor-principal);
     color: var(--cor-texto);
-    padding: 20px;
+    position: relative;
+}
 
-
+/* Fundo decorativo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('/DogTown/img/Patinhas.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3; 
 }
 
 /* ==========================================================================
-   3. HEADER & NAVIGATION
+   2. HEADER & NAVEGAÇÃO
    ========================================================================== */
 .header {
-    background-color: #320ea5;
+    background-color: var(--cor-roxo);
     box-shadow: 0 2px 10px rgba(50, 14, 165, 0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 10px 5%;
+    padding: 15px 5%;
 }
 
 .header-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-
 .logo img {
+    max-width: 150px;
+    height: auto;
     object-fit: contain;
 }
 
-
-
-
 .navigation {
     display: flex;
-    gap: 50px;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
-.navigation a {
+.navigation a, .login {
     font-weight: 600;
     color: white;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-.navigation a:hover {
-    color: #efa000;
+.navigation a:hover, .login:hover {
+    color: var(--cor-principal);
 }
 
 .header-actions {
     display: flex;
     align-items: center;
     gap: 15px;
-}
-
-.login {
-    font-weight: 600;
-    color: white;
-    text-decoration: none;
-}
-
-.login:hover {
-    color: #efa000;
+    flex-wrap: wrap;
 }
 
 .search {
-    background-color: #efa000;
+    background-color: var(--cor-principal);
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.9rem;
     color: white;
     font-weight: 500;
     text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .search:hover {
@@ -109,108 +118,111 @@ body{
     text-align: right;
     font-size: 0.85rem;
     font-weight: 600;
-    color: WHITE;
-    margin-top: 4px;
-}
-
-
-/*========================
-BANNER
-++++++++++++++++++++++++++*/
-
-.banner{
-    text-align: center;
-    padding: 35px;
-    border-radius: 15px;
-    width: 100%;
-    margin-top: 35px;
-
-}
-
-.banner img{
-    width: 80%;
-    height: 500px;
-    border-radius: 15px;
-    margin-top: 20px;
-
-}
-.banner h2{
     color: white;
-    font-size: 34px;
 }
-
-
-/*==============
-
-nosso seevicos
-====================*/
-
-.nossos-servicos{
-    display: grid;
-    grid-template-columns: 10fr;
-    grid-template-rows:  10fr 10fr 10fr 10fr;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 20px;
-
-    grid-template-areas: ;
-}
-
-
-/*=======
-
-CARDS
-
-=========*/
-.card{
-    display: inline;
-    background: #320ea5;
-    padding: 30px;
-    margin-top: 30px;
-    border-radius: 15px;
-    border-left: 8px solid #c0b4ec;
-    transition: var(--tempo) ease,
-    var(--deslocamento) ease,
-    var(--sombra);
-    opacity: 0.8;
-    
-}
-.card:hover{
-     transform: translateY(var(--deslocamento)) scale(1.05);
-    box-shadow: var(--sombra);
-}
-.card h1{
-    font-size: 40px;
-
-}
-
-.card h2{
-    font-size: 20px;
-}
-
-
-.card-lista{
-     display: flex;
-}
-
-
-/*  ------------*/
 
 /* ==========================================================================
-   10. FOOTER
+   3. BANNER
+   ========================================================================== */
+.banner {
+    text-align: center;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto 0;
+}
+
+.banner h2 {
+    color: white;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+}
+
+.banner img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+/* ==========================================================================
+   4. NOSSOS SERVIÇOS & CARDS (LAYOUT FLEXÍVEL/GRID)
+   ========================================================================== */
+.nossos-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    gap: 25px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--cor-roxo);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 8px solid #c0b4ec;
+    transition: transform var(--tempo) ease, box-shadow var(--tempo) ease;
+    opacity: 0.95;
+}
+
+.card:hover {
+    transform: translateY(var(--deslocamento)) scale(1.02);
+    box-shadow: var(--sombra);
+}
+
+.card h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.card-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+button:hover {
+    background-color: var(--cor-principal-hover);
+}
+
+/* ==========================================================================
+   5. FOOTER
    ========================================================================== */
 .footer {
-    background-color: #1e076b;
+    background-color: var(--cor-roxo);
     color: #d1c7f0;
-    padding: 60px 5% 20px;
+    padding: 40px 5% 20px;
+    margin-top: 40px;
 }
 
 .footer-main {
     max-width: 1200px;
-    margin: 0 auto 40px;
+    margin: 0 auto 30px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+    gap: 30px;
 }
 
 .footer-brand .footer-logo {
@@ -220,7 +232,7 @@ CARDS
 }
 
 .footer-brand .footer-logo strong {
-    color: #efa000;
+    color: var(--cor-principal);
 }
 
 .footer-brand p {
@@ -229,7 +241,7 @@ CARDS
 }
 
 .footer-column h3 {
-    color: #efa000;
+    color: var(--cor-principal);
     font-size: 1.1rem;
     margin-bottom: 15px;
 }
@@ -239,10 +251,11 @@ CARDS
     font-size: 0.85rem;
     margin-bottom: 8px;
     color: #d1c7f0;
+    text-decoration: none;
 }
 
 .footer-column a:hover {
-    color: #efa000;
+    color: var(--cor-principal);
 }
 
 .footer-column strong {
@@ -256,39 +269,63 @@ CARDS
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
     font-size: 0.8rem;
     color: #9382cc;
 }
 
+/* ==========================================================================
+   6. MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================================================== */
 
+/* Dispositivos Médios e Celulares (Até 768px) */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        text-align: center;
+    }
 
-________________________________________________
+    .navigation {
+        justify-content: center;
+        gap: 15px;
+    }
 
+    .header-actions {
+        justify-content: center;
+        width: 100%;
+    }
 
-/* Configuração básica para garantir que a página ocupe a tela toda */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+    .phone {
+        text-align: center;
+    }
+
+    .banner {
+        padding: 15px;
+    }
+
+    .card h1 {
+        font-size: 1.5rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
-/* Cria uma camada de fundo atrás de todo o conteúdo */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Garante que a imagem fique atrás do texto */
-    
-    /* Configurações da imagem */
-    background-image: url('/DogTown/img/Patinhas.avif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* Controle da opacidade (0.0 a 1.0) */
-    opacity: 0.3; 
+/* Telas Pequenas/Celulares (Até 480px) */
+@media (max-width: 480px) {
+    .navigation {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .nossos-servicos {
+        grid-template-columns: 1fr; /* 1 card por linha no celular */
+    }
+
+    button {
+        width: 100%; /* Botão ocupa a largura total no mobile */
+    }
 }
