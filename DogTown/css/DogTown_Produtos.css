@@ -1,57 +1,76 @@
-/* RESET BÁSICO */
+/* ================= RESET E VARIÁVEIS ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #efa000;
-    color: #333;
+:root {
+    --primary-color: #ff7a00;    /* Laranja principal */
+    --primary-hover: #e06c00;
+    --dark-color: #2b2b2b;
+    --light-bg: #efa000;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --font-hand: 'Edu VIC WA NT Hand', cursive;
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-bg);
+    color: var(--dark-color);
+    line-height: 1.6;
+    display: grid;
+    grid-template-columns: 1fr 280px; /* Layout Principal + Aside */
+    grid-template-areas: 
+        "header header"
+        "banner banner"
+        "main aside"
+        "footer footer";
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+}
 
-/* ==========================================================================
-   3. HEADER & NAVIGATION
-   ========================================================================== */
+/* ================= HEADER ================= */
 .header {
+    grid-area: header;
     background-color: #320ea5;
-    box-shadow: 0 2px 10px rgba(50, 14, 165, 0.08);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 10px 5%;
+    padding: 15px 25px;
+    border-bottom: 2px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .header-top {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-
 .logo img {
+    height: auto;
+    max-width: 200px; /* Ajustado para um tamanho mais proporcional */
     object-fit: contain;
 }
 
-
-
-
 .navigation {
     display: flex;
-    gap: 50px;
+    gap: 20px;
 }
 
 .navigation a {
-    font-weight: 600;
-    color: white;
     text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    transition: color 0.2s;
 }
 
 .navigation a:hover {
-    color: #efa000;
+    color: var(--primary-color);
 }
 
 .header-actions {
@@ -61,164 +80,210 @@ body {
 }
 
 .login {
-    font-weight: 600;
-    color: white;
     text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    transition: all 0.2s;
 }
 
 .login:hover {
-    color: #efa000;
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 .search {
-    background-color: #efa000;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: white;
-    font-weight: 500;
     text-decoration: none;
+    background-color: var(--light-bg);
+    padding: 8px 14px;
+    border-radius: 20px;
+    color: #666;
+    font-size: 0.9rem;
 }
 
 .search:hover {
-    background-color: #7fef00;
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 .phone {
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--primary-color);
     text-align: right;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: WHITE;
-    margin-top: 4px;
+    font-size: 0.95rem;
 }
 
-
-
-
-/* BANNER */
+/* ================= BANNER ================= */
 .banner {
-    background: white;
-    margin: auto;
-    border-radius: 20px;
-    text-align: center;
-    padding: 40px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    opacity: 0.9;
+    grid-area: banner;
+    background: linear-gradient(135deg, #fff3e6 0%, #ffe0cc 100%);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
 }
 
 .banner h2 {
-    font-family: 'Edu VIC WA NT Hand', cursive;
+    font-family: var(--font-hand);
     font-size: 2.5rem;
-    color: #4a2e2b;
-    margin-bottom: 20px;
+    color: var(--primary-color);
+    max-width: 400px;
 }
 
-.banner-img-container img {
-    max-width: 100%;
+.banner img {
+    max-width: 50%;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
 }
 
-/* ESTRUTURA PRINCIPAL */
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-
-/* GRID DE PRODUTOS */
+/* ================= PRODUTOS (MAIN) ================= */
 .nossos-produtos {
+    grid-area: main;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
-    margin-top: 40px;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-    "header header header"    
-    "banner banner banner"
-    "aside card card"
-        "footer footer footer";
-}  
+}
 
-
-
-/* FILTRO DE CATEGORIAS (ASIDE) */
-.categoria {
-    background-color: #ffffff;
-    padding: 24px;
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card h1 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.card-lista img {
     width: 100%;
-    max-width: 300px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eee;
-    
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card button {
+    margin-top: auto;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.card button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* ================= CATEGORIAS (ASIDE) ================= */
+.categoria {
+    grid-area: aside;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    height: fit-content;
 }
 
 .categoria h2 {
-    font-size: 1.25rem;
-    color: #333;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #ff7b54;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-color);
 }
 
-/* FORMATAÇÃO DOS BOTÕES RADIO */
-.categoria form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.radio-group {
+.categoria label {
     display: flex;
     align-items: center;
-    padding: 10px 14px;
-    border-radius: 8px;
+    gap: 10px;
+    margin-bottom: 12px;
     cursor: pointer;
-    background-color: #f8f9fa;
-    transition: all 0.2s ease-in-out;
-}
-
-.radio-group:hover {
-    background-color: #ffe6e0;
-    color: #ff7b54;
-}
-
-.radio-group input[type="radio"] {
-    accent-color: #ff7b54;
-    width: 18px;
-    height: 18px;
-    margin-right: 12px;
-    cursor: pointer;
-}
-
-.radio-group span {
     font-size: 0.95rem;
-    font-weight: 500;
+    transition: color 0.2s;
 }
 
-/* Destaque para quando a opção estiver selecionada */
-.radio-group:has(input[type="radio"]:checked) {
-    background-color: #ff7b54;
-    color: #ffffff;
+.categoria label:hover {
+    color: var(--primary-color);
 }
 
-.radio-group:has(input[type="radio"]:checked) input[type="radio"] {
-    accent-color: #ffffff;
+.categoria input[type="radio"] {
+    accent-color: var(--primary-color);
+    width: 16px;
+    height: 16px;
 }
 
-/*----------------------------------
-PATINHAS
-------------------------------------*/
 
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+/* ==========================================================================
+   7. RODAPÉ (FOOTER)
+   ========================================================================== */
+.footer {
+  background-color: #320ea5;
+  color: var(--white);
+  padding: 60px 5% 20px;
+  margin-top: 40px;
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.footer h4 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul a {
+  color: #3982db;
+  font-size: 0.95rem;
+}
+
+.footer ul a:hover {
+  color: var(--white);
+  padding-left: 5px;
+}
+
+.footer p {
+  color: #60a4f7;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 0.85rem;
 }
 
 /* Cria uma camada de fundo atrás de todo o conteúdo */
@@ -243,13 +308,25 @@ body::before {
 }
 
 
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
-    .banner h2 {
-        font-size: 1.8rem;
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 900px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "banner"
+            "aside"
+            "main";
     }
 
-    .categoria {
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner img {
         max-width: 100%;
+        margin-top: 20px;
     }
 }
