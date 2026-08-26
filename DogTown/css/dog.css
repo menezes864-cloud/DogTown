@@ -82,7 +82,7 @@ a {
    3. CABEÇALHO / NAVBAR
    ========================================================================== */
 .navbar {
-  background-color: #320ea5c2;
+  background-color: #320ea5;
   position: sticky;
   top: 20;
   z-index: 1000;
@@ -355,7 +355,7 @@ a {
    7. RODAPÉ (FOOTER)
    ========================================================================== */
 .footer {
-  background-color: var(--dark-color);
+  background-color: #320ea5;
   color: var(--white);
   padding: 60px 5% 20px;
   margin-top: 40px;
