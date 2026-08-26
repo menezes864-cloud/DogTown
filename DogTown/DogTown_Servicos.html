@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+    <title>Dog Town | Serviços</title>
+
+    <!-- Fontes Google: Baloo 2 e Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Personalizado -->
     <link rel="stylesheet" href="CSS/DOgTown_Servicos.css">
-    <title>DogTown - Serviços</title>
 </head>
 <body>
 
-     <!-- ================= HEADER ================= -->
+    <!-- ================= HEADER ================= -->
     <header class="header">
-
         <div class="header-top">
-
-            <a href="#" class="logo">
-                <img src="/DogTown/img/LogoDogTownDiminuida.png" alt="" width="300" height="100">
-                
-
-              
+            <a href="/DogTown/home_IA.html" class="logo">
+                <img src="/DogTown/img/LogoDogTownDiminuida.png" alt="DogTown Logo" width="300" height="100">
             </a>
 
             <nav class="navigation">
                 <a href="/DogTown/home_IA.html">Início</a>
-                <a href="/DogTown/DogTown_Servicos.html">Serviços</a>
+                <a href="/DogTown/DogTown_Servicos.html" class="active">Serviços</a>
                 <a href="/DogTown/DogTown_Produtos.html">Produtos</a>
                 <a href="/DogTown/dog.html">Quem Somos</a>
                 <a href="/DogTown/carrinho_IA.html">Carrinho</a>
@@ -37,157 +37,156 @@
                     🔍 Buscar aqui
                 </a>
             </div>
-
         </div>
 
         <div class="phone">
             📞 (19) 98029-6012
         </div>
-
     </header>
-            <section class="banner">
-            
-            <h2>Profissionais Experientes e Preparados para atender com responsabilidade, carinho e atenção o seu melhor amigo</h2>
-            <img src="IMG/banner dog town.jpg" alt="Nossos Servicos" width="800" height="400">
-            </p>
-            
-        </section>
 
-        <main class="nossos-servicos">
-            <article class="card">
-                <span class="card-tag"><h1>Dog Walker - Passeio</h1></span>
-                <!-- <h2>Profissionais capacitados e experientes para acompanhar seu amigão durante as caminhadas </h2> -->
-                    <nav class="card-lista">
-                        <img src="IMG/dog walker.png" alt="Foto Perfil" width="200" height="150">
-                        
-                        <ul>
-                            <h1>Nossos Planos</h1> <br>
-                            <li>Anual</li> <br>
-                            <li>Mensal</li> <br>
-                            <li>Semanal</li> <br>
-                            <li>Diário</li> <br><br>
+    <!-- ================= BANNER HERO ================= -->
+    <section class="banner">
+        <div class="banner-content">
+            <span class="tag">🐾 Cuidado & Dedicação</span>
+            <h2>Profissionais experientes e preparados para atender com responsabilidade, carinho e atenção o seu melhor amigo.</h2>
+        </div>
+        <div class="banner-image">
+            <img src="IMG/banner dog town.jpg" alt="Nossos Serviços">
+        </div>
+    </section>
 
-                        </ul>
-                    </nav>
-                <button>Conheça Nossos Planos</button>
-            </article>
-         
-            
-         
+    <!-- ================= CONTEÚDO PRINCIPAL (SERVIÇOS) ================= -->
+    <main class="nossos-servicos">
 
-            <article class="card">
-                <span class="card-tag"><h1>Hotel para cães</h1></span>
-                <!-- <h2>Agende uma visita e conheça nossas instalações pessoalmente</h2> -->
-                    <nav class="card-lista">
-                        <img src="IMG/hotel cães.jpg" alt="Foto Perfil" width="200" height="150"> <br>
-                        <ul>
-                            <!-- <h1>Seu amigo merece todo conforto e segurança</h1> -->
-                            <li>Instalações Higienizadas diariamente</li> <br>
-                            <li>Climatizadas</li> <br>
-                            <li>Monitoradas 24h - Você acompanhando realtime</li> <br>
-                            <li>Auxiliar Veterinário 24h</li> <br><br>
+        <!-- Card 1: Dog Walker -->
+        <article class="card">
+            <div class="card-image-wrapper">
+                <img src="IMG/dog walker.png" alt="Dog Walker - Passeio" class="card-img">
+            </div>
+            <div class="card-body">
+                <span class="card-category">Passeios</span>
+                <h2>Dog Walker</h2>
+                <p class="card-desc">Caminhadas supervisionadas e seguras para manter a saúde e o bem-estar do seu cão.</p>
+                <div class="card-lista">
+                    <h3>Nossos Planos:</h3>
+                    <ul>
+                        <li>Plano Anual</li>
+                        <li>Plano Mensal</li>
+                        <li>Plano Semanal</li>
+                        <li>Atendimento Diário</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary">Conheça Nossos Planos</button>
+            </div>
+        </article>
 
-                        </ul>
-                    </nav>
-                <button>Nossas Instalações</button>
-            </article>
-                
-            <article class="card">
-                <span class="card-tag"><h1>Adestramento</h1></span>
-                <!-- <h2>Melhore a comunicação com seu melhor amigo e viva os melhores momentos</h2> -->
-                    <nav class="card-lista">
-                        <img src="IMG/cao e treinador.png" alt="Foto Perfil" width="200" height="150">
-                        <ul>
-                            <h1>Niveis de Adestramento</h1> <br>
-                            <li>Básico</li> <br>
-                            <li>Guarda / Proteção</li> <br>
-                            <li>Correção de comportamentos</li> <br><br>
-                        </ul>
-                        
-                    </nav>
-                <button>Agende uma visita</button>
-            </article>
+        <!-- Card 2: Hotel para Cães -->
+        <article class="card">
+            <div class="card-image-wrapper">
+                <img src="IMG/hotel cães.jpg" alt="Hotel para Cães" class="card-img">
+            </div>
+            <div class="card-body">
+                <span class="card-category">Hospedagem</span>
+                <h2>Hotel para Cães</h2>
+                <p class="card-desc">Hospedagem confortável e segura com monitoramento continuo para a sua tranquilidade.</p>
+                <div class="card-lista">
+                    <h3>Diferenciais:</h3>
+                    <ul>
+                        <li>Higienização diária rigorosa</li>
+                        <li>Ambientes Climatizados</li>
+                        <li>Monitoramento 24h em tempo real</li>
+                        <li>Auxiliar Veterinário 24h</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary">Nossas Instalações</button>
+            </div>
+        </article>
 
-            <article class="card">
-                <span class="card-tag"><h1>Condução e Transporte</h1></span>
-                <!-- <h2>Oferecemos transporte para sua maior comodidade</h2> -->
-                    <nav class="card-lista">
-                        <img src="IMG/transporte cães.webp" alt="Foto Perfil" width="200" height="150"> <br> 
-                        <ul>
-                            <!-- <h1>Conforto e Segurança</h1> -->
-                            <li>Taxi Dog</li> <br>
-                            <li>Ida e Volta para Escola</li> <br>
-                            <li>Serviços Avulsos</li> <br><br>
-                        </ul>
-                        
-                    </nav>
-                <button>Consulte Nossas Tafifas</button>
-            </article>
+        <!-- Card 3: Adestramento -->
+        <article class="card">
+            <div class="card-image-wrapper">
+                <img src="IMG/cao e treinador.png" alt="Adestramento" class="card-img">
+            </div>
+            <div class="card-body">
+                <span class="card-category">Educação</span>
+                <h2>Adestramento</h2>
+                <p class="card-desc">Melhore a comunicação e a convivência saudável entre você e o seu pet.</p>
+                <div class="card-lista">
+                    <h3>Níveis disponíveis:</h3>
+                    <ul>
+                        <li>Adestramento Básico</li>
+                        <li>Guarda & Proteção</li>
+                        <li>Correção de Comportamento</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary">Agende uma Visita</button>
+            </div>
+        </article>
 
-        </main>
+        <!-- Card 4: Condução e Transporte -->
+        <article class="card">
+            <div class="card-image-wrapper">
+                <img src="IMG/transporte cães.webp" alt="Condução e Transporte" class="card-img">
+            </div>
+            <div class="card-body">
+                <span class="card-category">Transporte</span>
+                <h2>Condução & Transporte</h2>
+                <p class="card-desc">Transporte especializado, climatizado e seguro para levar seu pet com total conforto.</p>
+                <div class="card-lista">
+                    <h3>Opções de Serviço:</h3>
+                    <ul>
+                        <li>Táxi Dog</li>
+                        <li>Ida e Volta para a Escola</li>
+                        <li>Serviços Avulsos</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary">Consulte Tarifas</button>
+            </div>
+        </article>
 
-        <!-- ================= FOOTER ================= -->
-    <footer class="footer">
+    </main>
 
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer" id="contato">
         <div class="footer-main">
 
             <div class="footer-brand">
-
                 <div class="footer-logo">
                     🐾 <strong>DOG TOWN</strong>
                 </div>
-
-                <p>
-                    Cuidando de quem faz parte
-                    da sua família.
-                </p>
-
+                <p>Cuidando de quem faz parte da sua família.</p>
             </div>
 
-
             <div class="footer-column">
-
                 <h3>Menu</h3>
-
-                <a href="#inicio">Início</a>
-                <a href="#servicos">Serviços</a>
-                <a href="#produtos">Produtos</a>
-                <a href="#sobre">Sobre nós</a>
-
+                <a href="/DogTown/home_IA.html">Início</a>
+                <a href="/DogTown/DogTown_Servicos.html">Serviços</a>
+                <a href="/DogTown/DogTown_Produtos.html">Produtos</a>
+                <a href="/DogTown/dog.html">Sobre nós</a>
             </div>
 
-
             <div class="footer-column">
-
                 <h3>Contato</h3>
-
                 <span>📞 (19) 98029-6012</span>
                 <span>📍 Nazaré Paulista - SP</span>
                 <span>📱 Instagram</span>
-
             </div>
 
-
             <div class="footer-column">
-
                 <h3>Horários</h3>
-
                 <span>Segunda a sexta</span>
                 <strong>08h às 18h</strong>
-
                 <span>Sábado</span>
                 <strong>08h às 13h</strong>
-
             </div>
 
         </div>
-
 
         <div class="footer-bottom">
             <span>© 2026 Dog Town Pet Shop</span>
             <span>Feito com ❤️ para os amantes de pets.</span>
         </div>
-
     </footer>
+
 </body>
 </html>
