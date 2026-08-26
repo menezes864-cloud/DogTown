@@ -107,11 +107,14 @@ body {
 
     padding: 12px 14px;
 
-    color: #fff;
+    color: #ffffff;
+
+    font-family: arial, sans-serif;
+                /* herda a família de fontes do elemento pai */
 
     text-decoration: none;                          /* remove o sublinhado dos links */
 
-    font-size: 0.95rem;
+    font-size: 1.5rem;
 
     font-weight: 500;                               /* define a espessura da fonte */
 
@@ -1014,6 +1017,38 @@ footer p {
     transform: translateY(-3px);
 }
 
+
+/*----------------------------------
+PATINHAS
+------------------------------------*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cria uma camada de fundo atrás de todo o conteúdo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Garante que a imagem fique atrás do texto */
+    
+    /* Configurações da imagem */
+    
+    background-image: url('/DogTown/img/Patinhas.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Controle da opacidade (0.0 a 1.0) */
+    opacity: 0.3; 
+}
 
 /* =========================================
    RESPONSIVIDADE

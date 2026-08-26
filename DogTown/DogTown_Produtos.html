@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Hand:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+    <title>Dog Town | Produtos</title>
+    
+    <!-- CSS da Identidade Visual -->
     <link rel="stylesheet" href="CSS/DogTown_Produtos.css">
-    <title>DogTown - Serviços</title>
+    
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- ================= HEADER ================= -->
     <header class="header">
-
         <div class="header-top">
-
-            <a href="#" class="logo">
-                <img src="/DogTown/img/LogoDogTownDiminuida.png" alt="" width="300" height="100">
-                
-
-              
+            <a href="/DogTown/home_IA.html" class="logo">
+                <img src="/DogTown/img/LogoDogTownDiminuida.png" alt="Dog Town Logo" width="300" height="100">
             </a>
 
             <nav class="navigation">
-                <a href="#inicio">Início</a>
+                <a href="/DogTown/home_IA.html">Início</a>
                 <a href="/DogTown/DogTown_Servicos.html">Serviços</a>
-                <a href="/DogTown/DogTown_Produtos.html">Produtos</a>
+                <a href="/DogTown/DogTown_Produtos.html" class="active">Produtos</a>
                 <a href="/DogTown/dog.html">Quem Somos</a>
                 <a href="/DogTown/carrinho_IA.html">Carrinho</a>
                 <a href="#contato">Contatos</a>
@@ -37,102 +38,152 @@
                     🔍 Buscar aqui
                 </a>
             </div>
-
         </div>
 
         <div class="phone">
             📞 (19) 98029-6012
         </div>
-
     </header>
-        <section class="banner">
-            
+
+    <!-- ================= BANNER HERO ================= -->
+    <section class="banner">
+        <div class="banner-content">
+            <span class="tag">🐶 O melhor para seu pet</span>
             <h2>Conheça os melhores produtos para o seu Pet</h2>
-            <img src="IMG/banner produtos png.png" alt="Nossos Servicos" width="800" height="400">
-            </p>
-            
-        </section>
-        <main class="nossos-produtos">
-            <article class="card">
-                <h1>Petisqueira</h1>
-                <!-- <h2>Profissionais capacitados e experientes para acompanhar seu amigão durante as caminhadas </h2> -->
-                    <nav class="card-lista">
-                        <img src="/DogTown/img/diversos (6).webp" alt="Foto Perfil" width="200" height="150">
-                                        
-                    </nav> <br>
-                <button>Compre Agora</button>
-            </article>
+            <p>Qualidade, diversão e conforto em um só lugar.</p>
+        </div>
+        <div class="banner-image">
+            <img src="IMG/banner produtos png.png" alt="Nossos Produtos">
+        </div>
+    </section>
 
-            <article class="card">
-                <h1>Colar </h1>
-                <!-- <h2>Profissionais capacitados e experientes para acompanhar seu amigão durante as caminhadas </h2> -->
-                    <nav class="card-lista">
-                        <img src="/DogTown/img/colar (6).webp" alt="Foto Perfil" width="200" height="150">
-                        
-                      
-                    </nav> <br>
-                <button>Compre Agora</button>
-            </article>
+    <!-- ================= CONTEÚDO PRINCIPAL (LAYOUT GRID) ================= -->
+    <div class="products-layout">
 
-            <article class="card">
-                <h1>Bolinhas </h1>
-                
-                    <nav class="card-lista">
-                        <img src="/DogTown/img/brinquedos (3).webp" alt="Foto Perfil" width="200" height="150">
-                        
-                        
-                    </nav> <br>
-                <button>Compre Agora</button> <br>
-            </article>
-
-            
-
-
-         
-        </main>
-
-       <aside class="categoria">
-            <h2>Escolha a categoria</h2>
-            <input type="radio" name="categorias"> Acessórios <br>
-            <input type="radio" name="categorias"> Brinquedos <br>
-            <input type="radio" name="categorias"> Colares e Coleiras <br>
-            <input type="radio" name="categorias"> Equipamentos Diversos<br>
-            <input type="radio" name="categorias"> Focinheiras <br>
-            <input type="radio" name="categorias"> Guias <br>
-            <input type="radio" name="categorias"> Kit <br>
-            <input type="radio" name="categorias"> Rações e Petiscos <br>
-            <input type="radio" name="categorias"> Comedouros <br>
+        <!-- ================= SIDEBAR CATEGORIAS ================= -->
+        <aside class="categoria">
+            <h2>Categorias</h2>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="categorias" checked>
+                    <span>Acessórios</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="categorias">
+                    <span>Brinquedos</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="categorias">
+                    <span>Colares e Coleiras</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="categorias">
+                    <span>Equipamentos Diversos</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="categorias">
+                    <span>Focinheiras</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="categorias">
+                    <span>Guias</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="categorias">
+                    <span>Kits Especiais</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="categorias">
+                    <span>Rações e Petiscos</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="categorias">
+                    <span>Comedouros</span>
+                </label>
+            </div>
         </aside>
 
-        <!-- Rodapé -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <h4>Início</h4>
-        <ul>
-          <li><a href="#">Visitas</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Serviços</h4>
-        <ul>
-          <li><a href="#">Contato</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Social</h4>
-        <p>📸 🌐 🎥</p>
-      </div>
-      <div>
-        <h4>Contato</h4>
-        <p>📞 (91) 99878-8333</p>
-        <p>✉️ info@dogtown.com</p>
-      </div>
+        <!-- ================= GRID DE PRODUTOS ================= -->
+        <main class="nossos-produtos">
+
+            <article class="card">
+                <div class="card-image">
+                    <img src="/DogTown/img/diversos (6).webp" alt="Petisqueira">
+                </div>
+                <div class="card-info">
+                    <span class="card-category">Acessórios</span>
+                    <h3>Petisqueira</h3>
+                    <button class="btn btn-primary">Comprar Agora</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <img src="/DogTown/img/colar (6).webp" alt="Colar para Pet">
+                </div>
+                <div class="card-info">
+                    <span class="card-category">Coleiras</span>
+                    <h3>Colar Ajustável</h3>
+                    <button class="btn btn-primary">Comprar Agora</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <img src="/DogTown/img/brinquedos (3).webp" alt="Bolinhas para Pet">
+                </div>
+                <div class="card-info">
+                    <span class="card-category">Brinquedos</span>
+                    <h3>Kit Bolinhas</h3>
+                    <button class="btn btn-primary">Comprar Agora</button>
+                </div>
+            </article>
+
+        </main>
+
     </div>
-    <div class="copyright">
-      Dog Town © 2026 | Belém, Brasil
-    </div>
-  </footer>
-    
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer" id="contato">
+        <div class="footer-main">
+
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    🐾 <strong>DOG TOWN</strong>
+                </div>
+                <p>Cuidando de quem faz parte da sua família.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Menu</h3>
+                <a href="/DogTown/home_IA.html">Início</a>
+                <a href="/DogTown/DogTown_Servicos.html">Serviços</a>
+                <a href="/DogTown/DogTown_Produtos.html">Produtos</a>
+                <a href="/DogTown/dog.html">Sobre nós</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <span>📞 (19) 98029-6012</span>
+                <span>📍 Nazaré Paulista - SP</span>
+                <span>📱 Instagram</span>
+            </div>
+
+            <div class="footer-column">
+                <h3>Horários</h3>
+                <span>Segunda a sexta</span>
+                <strong>08h às 18h</strong>
+                <span>Sábado</span>
+                <strong>08h às 13h</strong>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Dog Town Pet Shop</span>
+            <span>Feito com ❤️ para os amantes de pets.</span>
+        </div>
+    </footer>
+
 </body>
 </html>
