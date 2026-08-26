@@ -6,10 +6,10 @@
 }
 
 :root {
-    --primary-color: #ff7a00;    /* Laranja principal */
+    --primary-color: #ff7a00;
     --primary-hover: #e06c00;
     --dark-color: #2b2b2b;
-    --light-bg: #efa000;
+    --light-bg: #f8f9fa;
     --card-bg: #ffffff;
     --border-color: #e2e8f0;
     --font-hand: 'Edu VIC WA NT Hand', cursive;
@@ -18,11 +18,11 @@
 
 body {
     font-family: var(--font-main);
-    background-color: var(--light-bg);
+    background-color: #efa000;
     color: var(--dark-color);
     line-height: 1.6;
     display: grid;
-    grid-template-columns: 1fr 280px; /* Layout Principal + Aside */
+    grid-template-columns: 1fr 280px;
     grid-template-areas: 
         "header header"
         "banner banner"
@@ -41,6 +41,7 @@ body {
     padding: 15px 25px;
     border-bottom: 2px solid var(--border-color);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 12px 12px 0 0;
 }
 
 .header-top {
@@ -53,19 +54,21 @@ body {
 
 .logo img {
     height: auto;
-    max-width: 200px; /* Ajustado para um tamanho mais proporcional */
+    max-width: 200px;
     object-fit: contain;
 }
 
 .navigation {
     display: flex;
     gap: 20px;
+    margin-top: 60px;
 }
 
 .navigation a {
     text-decoration: none;
-    color: #ffffff;
+    color: white;
     font-weight: 600;
+    font-size: 1.5rem;
     transition: color 0.2s;
 }
 
@@ -103,11 +106,6 @@ body {
     font-size: 0.9rem;
 }
 
-.search:hover {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
 .phone {
     margin-top: 10px;
     font-weight: bold;
@@ -129,14 +127,14 @@ body {
 }
 
 .banner h2 {
-    font-family: var(--font-hand);
+    font-family: arial, sans-serif;
     font-size: 2.5rem;
     color: var(--primary-color);
     max-width: 400px;
 }
 
 .banner img {
-    max-width: 50%;
+    max-width: 45%;
     height: auto;
     object-fit: contain;
 }
@@ -213,77 +211,73 @@ body {
     border-bottom: 2px solid var(--primary-color);
 }
 
-.categoria label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-}
-
-.categoria label:hover {
-    color: var(--primary-color);
-}
-
 .categoria input[type="radio"] {
     accent-color: var(--primary-color);
-    width: 16px;
-    height: 16px;
+    margin-right: 8px;
+    cursor: pointer;
 }
 
-
-/* ==========================================================================
-   7. RODAPÉ (FOOTER)
-   ========================================================================== */
+/* ================= FOOTER ================= */
 .footer {
-  background-color: #320ea5;
-  color: var(--white);
-  padding: 60px 5% 20px;
-  margin-top: 40px;
+    grid-area: footer;
+    background-color: #320ea5;
+    color: #ffffff;
+    border-radius: 12px 12px 0 0;
+    padding: 40px 30px 20px 30px;
+    margin-top: 20px;
 }
 
 .footer-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
 .footer h4 {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  color: var(--primary-color);
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
 }
 
-.footer ul li {
-  margin-bottom: 10px;
+.footer ul {
+    list-style: none;
 }
 
-.footer ul a {
-  color: #3982db;
-  font-size: 0.95rem;
+.footer a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
-.footer ul a:hover {
-  color: var(--white);
-  padding-left: 5px;
+.footer a:hover {
+    color: #ffffff;
 }
 
 .footer p {
-  color: #60a4f7;
-  font-size: 0.95rem;
-  margin-bottom: 8px;
+    color: #cccccc;
+    margin-bottom: 8px;
 }
 
 .copyright {
-  text-align: center;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #94a3b8;
-  font-size: 0.85rem;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444444;
+    color: #aaaaaa;
+    font-size: 0.9rem;
+}
+
+
+
+/*----------------------------------
+PATINHAS
+------------------------------------*/
+
+html, body {
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    
 }
 
 /* Cria uma camada de fundo atrás de todo o conteúdo */
@@ -307,8 +301,6 @@ body::before {
     opacity: 0.3; 
 }
 
-
-
 /* ================= RESPONSIVIDADE ================= */
 @media (max-width: 900px) {
     body {
@@ -317,7 +309,8 @@ body::before {
             "header"
             "banner"
             "aside"
-            "main";
+            "main"
+            "footer";
     }
 
     .banner {
