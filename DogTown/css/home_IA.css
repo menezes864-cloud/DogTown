@@ -699,3 +699,48 @@ body::before {
     /* Controle da opacidade (0.0 a 1.0) */
     opacity: 0.3; 
 }
+
+
+/* ==========================================================================
+   12. JS STYLES & MOBILE MENU TOGGLE
+   ========================================================================== */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+/* Animações ativadas via JS */
+.service-card, .product-card, .benefit {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.service-card.animate-in, .product-card.animate-in, .benefit.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        padding-top: 15px;
+        text-align: center;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+}
