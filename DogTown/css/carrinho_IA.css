@@ -40,106 +40,83 @@ body {
 /* =========================================
    CABEÇALHO
 ========================================= */
-
-.portal-header {                                     /* cabeçalho do portal */
-
-    width: min(1400px, 94%);                         /* largura máxima de 1400px ou 94% da tela */
-
-    margin: 25px auto;                               /* centraliza o cabeçalho horizontalmente e adiciona margem superior e inferior */
-
-    padding: 10px 30px;                              /* espaçamento interno do cabeçalho */
-
-    min-height: 95px;                                /* altura mínima do cabeçalho */
-
-    display: flex;                                   /* utiliza flexbox para organizar os elementos do cabeçalho */
-
-    align-items: center;                             /* alinha os elementos verticalmente ao centro */
-
-    justify-content: space-between;                  /* distribui os elementos com espaço entre eles */
-
-    gap: 30px;                                       /* espaçamento entre os elementos do cabeçalho */
-    background: #320ea5;                           /* cor de fundo do cabeçalho */
-
-    border-radius: 18px;                              /* borda arredondada do cabeçalho */
-
-    box-shadow:                                       /* sombra do cabeçalho */
-        0 15px 35px rgba(0, 0, 0, 0.18);
+/* ==========================================================================
+   3. HEADER & NAVIGATION
+   ========================================================================== */
+.header {
+    background-color: #320ea5;
+    box-shadow: 0 2px 10px rgba(50, 14, 165, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 5%;
 }
 
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-/* LOGO */
 
 .logo img {
-
-    display: block;                                  /* remove o espaçamento em torno da imagem */
-
-    width: 180px;                                    /* largura da imagem do logo */
-
-    height: auto;                                    /* altura automática para manter a proporção da imagem */
-
-    object-fit: contain;                             /* mantém a proporção da imagem dentro do contêiner */
+    object-fit: contain;
 }
 
 
-/* =========================================
-   MENU
-========================================= */
 
-.nav-menu {                                         /* menu de navegação */
 
-    display: flex;                                  /* utiliza flexbox para organizar os itens do menu */
-
-    align-items: center;                            /* alinha os itens do menu verticalmente ao centro */
-
-    gap: 8px;                                       
+.navigation {
+    display: flex;
+    gap: 50px;
 }
 
+.navigation a {
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+}
 
-.nav-menu a {                                       /* links do menu de navegação */
+.navigation a:hover {
+    color: #efa000;
+}
 
-    position: relative;                             /* permite posicionar elementos filhos em relação a este elemento */
-
-    display: flex;                                  /* utiliza flexbox para organizar os itens do link */
-
+.header-actions {
+    display: flex;
     align-items: center;
-
-    gap: 8px;
-
-    padding: 12px 14px;
-
-    color: #ffffff;
-
-    font-family: arial, sans-serif;
-                /* herda a família de fontes do elemento pai */
-
-    text-decoration: none;                          /* remove o sublinhado dos links */
-
-    font-size: 1.5rem;
-
-    font-weight: 500;                               /* define a espessura da fonte */
-
-    border-radius: 10px;                            /* borda arredondada dos links */
-
-    transition:                                     /* transições suaves para as propriedades de fundo, transformação e cor */
-        background 0.25s ease,
-        transform 0.25s ease,                       /* transição suave para a transformação */
-        color 0.25s ease;
+    gap: 15px;
 }
 
-
-.nav-menu a:hover {                                 /* efeito ao passar o mouse sobre os links do menu de navegação */
-
-    background: rgba(255, 255, 255, 0.12);
-
-    transform: translateY(-2px);                    /* eleva o link levemente ao passar o mouse */
+.login {
+    font-weight: 600;
+    color: white;
 }
 
-
-.nav-menu i {                                       /* ícones dentro dos links do menu de navegação */
-
-    font-size: 1rem;                                /* tamanho do ícone */
+.login:hover {
+    color: #efa000;
 }
 
+.search {
+    background-color: #efa000;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 500;
+}
+
+.search:hover {
+    background-color: #7fef00;
+}
+
+.phone {
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: WHITE;
+    margin-top: 4px;
+}
 
 /* CARRINHO */
 
@@ -935,89 +912,69 @@ body {
 /* =========================================
    FOOTER
 ========================================= */
-
-footer {
-
-    width: min(1250px, 92%);
-
-    margin: 0 auto 30px;
-
-    padding: 25px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    background: #320ea5;
-
-    color: white;
-
-    border-radius: 18px;
+/* ==========================================================================
+   10. FOOTER
+   ========================================================================== */
+.footer {
+    background-color: #320ea5;
+    color: #d1c7f0;
+    padding: 60px 5% 20px;
 }
 
+.footer-main {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
 
-.footer-logo {
-
+.footer-brand .footer-logo {
     font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
 
-    font-weight: 700;
-
+.footer-brand .footer-logo strong {
     color: #efa000;
 }
 
+.footer-brand p {
+    font-size: 0.85rem;
+    color: #b3a5e0;
+}
 
-footer p {
+.footer-column h3 {
+    color: #efa000;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
 
+.footer-column a, .footer-column span, .footer-column strong {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #d1c7f0;
+}
+
+.footer-column a:hover {
+    color: #efa000;
+}
+
+.footer-column strong {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #3a19a5;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
     font-size: 0.8rem;
-
-    color: #ddd;
+    color: #9382cc;
 }
-
-
-.footer-social {
-
-    display: flex;
-
-    gap: 10px;
-}
-
-
-.footer-social a {
-
-    width: 38px;
-
-    height: 38px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,0.1);
-
-    transition: 0.2s;
-}
-
-
-.footer-social a:hover {
-
-    background: #efa000;
-
-    color: #320ea5;
-
-    transform: translateY(-3px);
-}
-
-
 /*----------------------------------
 PATINHAS
 ------------------------------------*/
