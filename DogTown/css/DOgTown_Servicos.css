@@ -109,6 +109,7 @@ a {
 
 .logo img {
     object-fit: contain;
+    max-height: 50px;
 }
 
 .navigation {
@@ -161,6 +162,16 @@ a {
     font-weight: 600;
     color: #ffffff;
     margin-top: 4px;
+}
+
+/* Botão do Menu Hambúrguer (Oculto no Desktop) */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 
 /* ==========================================================================
@@ -239,9 +250,8 @@ a {
 }
 
 .card-img {
-    width: 40%;
+    width: 100%;
     height: 100%;
-    margin: auto;
     object-fit: cover;
 }
 
@@ -382,9 +392,45 @@ a {
 }
 
 /* ==========================================================================
-   7. RESPONSIVIDADE
+   7. MEDIA QUERIES (RESPONSIVIDADE)
    ========================================================================== */
-@media (max-width: 900px) {
+
+/* Tablets e Dispositivos Médios (Até 992px) */
+@media screen and (max-width: 992px) {
+    .banner {
+        margin: 20px 20px;
+        padding: 30px 20px;
+    }
+    
+    .banner h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Dispositivos Móveis e Tablets Pequenos (Até 768px) */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-top {
+        flex-wrap: wrap;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        padding: 15px 0 5px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
     .banner {
         flex-direction: column;
         text-align: center;
@@ -393,24 +439,44 @@ a {
     .banner-image img {
         max-height: 200px;
     }
-}
 
-@media (max-width: 600px) {
-    .header-top {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .navigation {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
+    .footer-main {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 25px;
     }
 
     .footer-bottom {
         flex-direction: column;
-        gap: 10px;
         text-align: center;
+        gap: 10px;
+    }
+}
+
+/* Telas Pequenas de Celular (Até 576px) */
+@media screen and (max-width: 576px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .header-actions {
+        gap: 10px;
+    }
+
+    .phone {
+        display: none; /* Oculta telefone em telas muito pequenas para poupar espaço */
+    }
+
+    .nossos-servicos {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    .card-img {
+        width: 100%; /* Ajustado de 40% para 100% para evitar imagens cortadas */
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
     }
 }
 
