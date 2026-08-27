@@ -17,6 +17,8 @@ html {
 
 body {
     overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
 }
 
 img {
@@ -31,6 +33,22 @@ a {
     transition: all 0.3s ease;
 }
 
+/* Background com opacidade via pseudo-elemento */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('/DogTown/img/Patinhas.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3; 
+}
+
 /* ==========================================================================
    2. BUTTONS & UI COMPONENTS
    ========================================================================== */
@@ -43,6 +61,7 @@ a {
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
+    border: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
@@ -129,7 +148,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 10px 5%;
+    padding: 15px 5%;
 }
 
 .header-top {
@@ -139,17 +158,14 @@ a {
     gap: 20px;
 }
 
-
 .logo img {
     object-fit: contain;
+    max-height: 50px;
 }
-
-
-
 
 .navigation {
     display: flex;
-    gap: 50px;
+    gap: 30px;
 }
 
 .navigation a {
@@ -186,15 +202,25 @@ a {
 }
 
 .search:hover {
-    background-color: #7fef00;
+    background-color: #d89000;
 }
 
 .phone {
     text-align: right;
     font-size: 0.85rem;
     font-weight: 600;
-    color: WHITE;
+    color: #ffffff;
     margin-top: 4px;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 4px 8px;
 }
 
 /* ==========================================================================
@@ -291,9 +317,9 @@ a {
 }
 
 .benefit-icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
     background-color: #f0ebff;
-    width: 50px;
+    min-width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
@@ -449,7 +475,6 @@ a {
     align-items: center;
     gap: 50px;
     background-color: #ffffff;
-    opacity: 0.9;
     border-radius: 16px;
 }
 
@@ -614,7 +639,21 @@ a {
 }
 
 /* ==========================================================================
-   11. RESPONSIVE MEDIA QUERIES
+   11. ANIMAÇÕES (Scroll Reveal)
+   ========================================================================== */
+.service-card, .product-card, .benefit {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.service-card.animate-in, .product-card.animate-in, .benefit.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   12. RESPONSIVIDADE E MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 900px) {
     .hero-content, .about {
@@ -635,6 +674,7 @@ a {
         flex-direction: column;
         align-items: flex-start;
         width: 90%;
+        margin-top: 20px;
     }
 
     .about-stats {
@@ -642,93 +682,13 @@ a {
     }
 }
 
-@media (max-width: 600px) {
-    .header-top {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .navigation {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero-text h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-}
-
-/*----------------------------------
-PATINHAS
-------------------------------------*/
-
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Cria uma camada de fundo atrás de todo o conteúdo */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Garante que a imagem fique atrás do texto */
-    
-    /* Configurações da imagem */
-    
-    background-image: url('/DogTown/img/Patinhas.avif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* Controle da opacidade (0.0 a 1.0) */
-    opacity: 0.3; 
-}
-
-
-/* ==========================================================================
-   12. JS STYLES & MOBILE MENU TOGGLE
-   ========================================================================== */
-.menu-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 4px 8px;
-}
-
-/* Animações ativadas via JS */
-.service-card, .product-card, .benefit {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.service-card.animate-in, .product-card.animate-in, .benefit.animate-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
+    }
+
+    .header-top {
+        flex-wrap: wrap;
     }
 
     .navigation {
@@ -736,11 +696,52 @@ body::before {
         flex-direction: column;
         width: 100%;
         gap: 15px;
-        padding-top: 15px;
+        padding: 20px 0 10px;
         text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .navigation.active {
         display: flex;
+    }
+
+    .header-actions {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-top {
+        gap: 10px;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-buttons, .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .about-stats {
+        flex-direction: column;
+        gap: 15px;
     }
 }
