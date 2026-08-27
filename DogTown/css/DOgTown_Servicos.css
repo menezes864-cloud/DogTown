@@ -250,8 +250,10 @@ a {
 }
 
 .card-img {
-    width: 100%;
+    width: 50%;
     height: 100%;
+    
+    margin: auto;
     object-fit: cover;
 }
 
