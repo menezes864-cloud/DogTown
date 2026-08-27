@@ -158,11 +158,15 @@ TODAS AS CORES T TEMPOS FICAM CENTRALIZADOS ANTERANDO APENAS UMA VARIIÁVEL, TOD
       
  }
 
+
+
+
+
  /*card-------------------------------------------------------------*/
 
  .card{
     width: 850px;
-    background: rgb(205, 175, 209);
+    background: #320ea5;
     padding: 80px;
     border-radius: var(--borda);
     text-align: center;
@@ -187,6 +191,11 @@ TODAS AS CORES T TEMPOS FICAM CENTRALIZADOS ANTERANDO APENAS UMA VARIIÁVEL, TOD
     box-shadow var(--tempo) ease,
     backgroud-color var(--tempo) ease;
 
+ }
+
+ .card img{
+    background-color: white;
+    border-radius: 95%;
  }
 
  /*EFEITO Hover-------------------------------------------------------
@@ -216,7 +225,8 @@ TODAS AS CORES T TEMPOS FICAM CENTRALIZADOS ANTERANDO APENAS UMA VARIIÁVEL, TOD
    justify-content: space-between;
    margin-left: 70px;
    margin-bottom: 20px;
-margin-top: -5px;   
+   margin-top: -5px;   
+   color: white;
 
 
    
@@ -231,7 +241,7 @@ margin-top: -5px;
     border-radius: 8px;
     cursor: pointer;
     color: white;
-    background: var(--cor-principal);
+    background: #efa000;
     font-size: 16px;
 
 /*O BOtão tambem recebe trasition
